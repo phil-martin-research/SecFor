@@ -1,13 +1,17 @@
-#script to import, analyse and produce plots for prop biomass in secondary forests
+
+###################################################################################
+###############script to import, analyse and produce plots#########################
+###############for proportional tree species richness##############################
+###############in secondary forests################################################
+###################################################################################
+
 
 #load in necessary libraries
 library(RODBC)
 library(ggplot2)
-library(nlme)
+library(lme4)
 library(MuMIn)
 library(extrafont)
-font_import()
-Sys.setenv(R_GSCMD = "C:/Program Files(x86)/gs/gs9.05/bin/gswin32c.exe")
 
 #connect to database
 sec <- odbcConnect("Secondary/Degraded forests")
@@ -18,12 +22,12 @@ Rich<- sqlFetch(sec, "Species richness query")
 head(Rich)
 
 #Rename columns
-colnames(Rich) <- c("ID", "Site","Disturbance","Age","Type","Measurement","Rich_Ref","Rich_Sec","Det","Tax")
+colnames(Rich) <- c("ID", "Site","Disturbance","Age","Type","Measurement","Rich_Ref","Rich_Sec","Det","Tax","Size")
 head(Rich)
 range(Rich$Age)
 levels(Rich$Type)
 
-#subset data to remove logging, fire and missing values
+#subset data to remove logging, fire, missing values and other taxonomic groups
 Rich<-subset(Rich,Rich$Disturbance!="Fire")
 Rich<-subset(Rich,Rich$Disturbance!="Logging")
 Rich<-subset(Rich,Rich$Disturbance!="Agroforestry")
@@ -34,6 +38,8 @@ Rich<-subset(Rich,Rich$Tax!="NA")
 Rich<-subset(Rich,Rich$Tax!="Herbs")
 Rich<-subset(Rich,Rich$Tax!="Shrub")
 Rich<-subset(Rich,Rich$Tax!="All plants")
+Rich<-subset(Rich,Rich$Tax!="Epiphytes")
+Rich<-subset(Rich,Rich$Age<150)
 
 
 
@@ -43,7 +49,6 @@ Rich$lnRR<-log(Rich$Rich_Sec)-log(Rich$Rich_Ref)
 Rich$Proploss<-(Rich$Rich_Sec-Rich$Rich_Ref)/Rich$Rich_Ref
 Rich$Proploss2<-(qlogis((Rich$Proploss+ 1) / 2))
 
-plot(Rich$Age,((plogis(Rich$Proploss2)*2)-1)+1)
 
 #change types
 levels(Rich$Type)[levels(Rich$Type)=="Tropical dry forest"] <- "Dry"
@@ -53,15 +58,18 @@ levels(Rich$Type)[levels(Rich$Type)=="Tropical montane forest"] <- "Montane"
 
 #create column for reference as a factor
 Rich$Ran<-as.factor(Rich$Rich_Ref)
+Rich$Size<-as.factor(Rich$Size)
 
-ggplot(Rich,aes(y=Proploss2,x=Age))+geom_point()+facet_wrap(~Ran)
+
+ggplot(Rich,aes(y=Prop,x=Age,colour=Size))+geom_point()+facet_wrap(~Size)
+ggplot(Rich,aes(y=Prop,x=Age,group=Ran))+geom_point()+geom_line()+facet_wrap(~Ran)
 
 #redo sample sizes
 Rich$SS[Rich$SS<0]<-1
 
 #include only complete cases
 head(Rich)
-Rich2<-data.frame(ID=Rich$ID,Site=Rich$Site,Disturbance=Rich$Disturbance,Age=Rich$Age,Type=Rich$Type,Tax=Rich$Tax,Prop=Rich$Prop,lnRR=Rich$lnRR,Proploss=Rich$Proploss,Proploss2=Rich$Proploss2,Ran=Rich$Ran,Rich_Ref=Rich$Rich_Ref)
+Rich2<-data.frame(ID=Rich$ID,Site=Rich$Site,Disturbance=Rich$Disturbance,Age=Rich$Age,Type=Rich$Type,Tax=Rich$Tax,Prop=Rich$Prop,lnRR=Rich$lnRR,Proploss=Rich$Proploss,Proploss2=Rich$Proploss2,Ran=Rich$Ran,Rich_Ref=Rich$Rich_Ref,Size=Rich$Size)
 Rich3<-Rich2[complete.cases(Rich2), ]
 Rich3<-subset(Rich3,Rich3$Prop<3)
 
@@ -71,25 +79,17 @@ Rich3<-subset(Rich3,Rich3$Prop<3)
 
 #null model
 
-M0<-lme(Proploss2~1,random=~1+Age|Ran,data=Rich3,method="ML")
+M0<-lmer(Proploss2~1+(Age|Ran)+(1|Size),data=Rich3,REML=F)
 summary(M0)
-plot(M0)
 
 #set null deviance
 nulldev<--2*logLik(M0)[1]
 nulldev
 
 #saturated model
-M1<-lme(Proploss2~Age+I(Age^2)+log(Age)+Tax,random=~1+Age|Ran,data=Rich3,method="ML")
-summary(M1)
-plot(M1)
-qqnorm(M1)
+M1<-lmer(Proploss2~Age+I(Age^2)+log(Age)+(Age|Ran)+(1|Size),data=Rich3,REML=F)
 
-#diagnostic plot of fitted curves
-plot(augPred(M1,primary=~Age),grid=T)
-
-#compare model fits
-plot(comparePred(M1,M0,primary=~Age))
+plot(fitted(M1),M1@resid)
 
 #model selection using AICc
 
@@ -112,9 +112,10 @@ modsumm$dev_ex
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(modsumm, "Model - Richness.csv")
 
-#create predictions based on models >0.6 weight
-averaged<-model.avg(MS1,subset=cumsum(weight)<=0.6)
+#create predictions based on models >0.95 weight
+averaged<-model.avg(MS1,subset=cumsum(weight)<=0.95)
 averaged2<-averaged$avg.model
+averaged2
 
 #output parameter estimates
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
@@ -123,17 +124,17 @@ write.csv(averaged2, "Multimodel inferences Richness.csv") #save table
 
 #create new data
 Age<-seq(0.5,174,0.1)
-Age_epi<-seq(2,115,0.1)
 range(subset(Rich$Age,Rich$Tax=="Trees"))
-range(subset(Rich$Age,Rich$Tax=="Epiphytes"))
 
 #create predictions
-predstrees<-averaged2[1]+(averaged2[3]*log(Age))+averaged2[4]+((Age)*averaged2[2])
-predsepi<-averaged2[1]+(averaged2[3]*log(Age_epi))+((Age_epi)*averaged2[2])
+predstrees<-averaged2[1]+(averaged2[4]*(Age))+(averaged2[3]*log(Age))+((averaged2[2]*(Age^2)))
 SE_tree<-averaged2[1,2]+(averaged2[3,2])+averaged2[4,2]+(averaged2[2,2])
-SE_epi<-averaged2[1,2]+(averaged2[3,2])+(averaged2[2,2])
 
-plot(Age,plogis(predstrees)*2)
+
+plot(Rich3$Age,Rich3$Prop)
+lines(Age,plogis(predstrees)*2)
+lines(Age,plogis((predstrees+(SE_tree))*2),lty=2)
+lines(Age,plogis((predstrees-(SE_tree))*2),lty=2)
 
 #put into dataframes
 Tree_preds<-data.frame(Age=Age,preds=predstrees,SE=SE_tree,Tax="Trees")

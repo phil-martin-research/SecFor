@@ -64,9 +64,19 @@ M3<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|Height),
 M4<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|Height),data=AGB2,REML=T)
 M5<-lmer(Change~Age+log(Age)+I(Age^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=T)
 
+
+
+plot(AGB2$Age,plogis(AGB2$Change-0.6244254)*2)
+plot(AGB2$Age,plogis(AGB2$Change)*2)
+
+mean(plogis(AGB2$Change-0.6244254)*2)
+mean(plogis(AGB2$Change)*2)
+
+summary(M5)
+
 #test for best random effects
 
-AIC(M1,M2,M3,M4,M5)
+AIC(M1,M2,M3,M4,M5,M6)
 
 #looks like it's M5
 #run it again but with REML=F to calculate variance etc
