@@ -106,7 +106,7 @@ modsumm
 importance(modsumm)
 
 #output table as csv file
-setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
+setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(modsumm, "Model - Biomass.csv")
 
 #create predictions based on models >0.95 weight
@@ -114,7 +114,6 @@ averaged<-model.avg(MS1,subset=cumsum(weight)<=0.95)
 averaged2<-averaged$avg.model
 
 #output parameter estimates
-setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(averaged2, "Multimodel inferences Biomass.csv") #save table
 
 
@@ -127,7 +126,7 @@ SE<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])+(averaged2[4,2])
 
 #export model predictions for later use
 predictions<-data.frame(Prediction=preds,SE=SE,Type="Aboveground biomass")
-setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
+setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(predictions, "Model predictions - Biomass.csv") #save table
 
 #Summary table of estimates
