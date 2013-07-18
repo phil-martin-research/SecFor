@@ -1,6 +1,6 @@
 ##########################################################################
-#script to import, analyse and produce plots for relative                # 
-#aboveground biomass in secondary tropical forests                       #
+#script to import, analyse and produce plots for relative################# 
+#aboveground biomass in secondary tropical forests########################
 ##########################################################################
 
 #name:Phil Martin
@@ -54,8 +54,6 @@ AGB$Ran<-as.factor(AGB$AGB_Ref)
 
 #put data into new dataframe
 AGB2<-data.frame(Change=AGB$Proploss2,Change2=AGB$lnRR,Change3=AGB$Prop,Age=AGB$Age,Type=AGB$Type,Disturbance=AGB$Disturbance,Ran=AGB$Ran,Ref=as.numeric(AGB$AGB_Ref),Height=AGB$Height,WG=AGB$WG,LG=AGB$LG)
-
-ggplot(data=AGB,aes(x=Age,y=Prop,colour=LG))+geom_point()
 
 #Mixed model of relative AGB
 #using nlme
@@ -111,7 +109,6 @@ importance(modsumm)
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(modsumm, "Model - Biomass.csv")
 
-str(MS1)
 #create predictions based on models >0.95 weight
 averaged<-model.avg(MS1,subset=cumsum(weight)<=0.95)
 averaged2<-averaged$avg.model
@@ -122,27 +119,18 @@ write.csv(averaged2, "Multimodel inferences Biomass.csv") #save table
 
 
 #export parameter estimates
-#create predicitons based on model averaged parameters
+#create predictions based on model averaged parameters
 Age<-seq(0.5,82,.1)
 
 preds<-averaged2[1]+(averaged2[2]*Age)+(averaged2[3]*(Age^2))+(averaged2[4]*(log(Age)))
 SE<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])+(averaged2[4,2])
-
-plot(AGB2$Age,plogis(AGB2$Change)*2)
-lines(Age,plogis(preds)*2)
-
-max(plogis(preds)*2)
 
 #export model predictions for later use
 predictions<-data.frame(Prediction=preds,SE=SE,Type="Aboveground biomass")
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(predictions, "Model predictions - Biomass.csv") #save table
 
-averaged[1]
-
-
-
-##Summary table of estimates
+#Summary table of estimates
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 M1.results <- matrix(data = NA, nrow =length(averaged$term.names), ncol = 4) #create table
 rownames(M1.results) <- averaged$term.names  #rows named after parameters
