@@ -7,6 +7,7 @@
 #date:17/07/2013
 #version of R used: 2.15.3
 
+
 #load in necessary libraries
 library(RODBC)
 library(ggplot2)
@@ -57,18 +58,25 @@ AGB2<-data.frame(Change=AGB$Proploss2,Change2=AGB$lnRR,Change3=AGB$Prop,Age=AGB$
 ggplot(data=AGB,aes(x=Age,y=Prop,colour=LG))+geom_point()
 
 #Mixed model of relative AGB
-
 #using nlme
 
 M1<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|WG)+(1|Height)+(1|LG),data=AGB2,REML=T)
 M2<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|WG)+(1|Height),data=AGB2,REML=T)
 M3<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|Height),data=AGB2,REML=T)
 M4<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|Height),data=AGB2,REML=T)
-M1<-lmer(Change~Age+log(Age)+I(Age^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=F)
+M5<-lmer(Change~Age+log(Age)+I(Age^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=T)
+
+#test for best random effects
 
 AIC(M1,M2,M3,M4,M5)
 
-#null model
+#looks like it's M5
+#run it again but with REML=F to calculate variance etc
+
+M1<-lmer(Change~Age+log(Age)+I(Age^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=F)
+
+
+#fit null model and calculate the deviance for later calculations
 M0<-lmer(Change~1+(Age|Ran)+(1|WG)+(1|Height)+(1|LG),data=AGB2,REML=F)
 null_dev<--2*logLik(M0)[1]
 

@@ -1,5 +1,7 @@
-#script to plot all histograms for forest recovery paper
-#script should include AGB, BGB, Soil, Total, Richness, Proportion of species
+##############################################################################
+#script to plot all histograms for forest recovery paper######################
+#script should include AGB, BGB, Soil C, Richness, Proportion of species######
+##############################################################################
 
 #load in necessary libraries
 library(RODBC)
