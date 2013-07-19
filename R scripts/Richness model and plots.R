@@ -10,7 +10,7 @@
 #load in necessary libraries
 library(RODBC)
 library(ggplot2)
-library(lmer)
+library(lme4)
 library(MuMIn)
 library(extrafont)
 
@@ -40,7 +40,7 @@ Rich<-subset(Rich,Rich$Tax!="Herbs")
 Rich<-subset(Rich,Rich$Tax!="Shrub")
 Rich<-subset(Rich,Rich$Tax!="All plants")
 Rich<-subset(Rich,Rich$Tax!="Epiphytes")
-Rich<-subset(Rich,Rich$Age<150)
+
 
 
 
@@ -51,7 +51,8 @@ Rich$Proploss<-(Rich$Rich_Sec-Rich$Rich_Ref)/Rich$Rich_Ref
 Rich$Proploss2<-(qlogis((Rich$Proploss+ 1) / 2))
 
 
-#change types
+
+#change forest types
 levels(Rich$Type)[levels(Rich$Type)=="Tropical dry forest"] <- "Dry"
 levels(Rich$Type)[levels(Rich$Type)=="Tropical moist forest"] <- "Moist"
 levels(Rich$Type)[levels(Rich$Type)=="Tropical rainforest"] <- "Wet"
@@ -60,12 +61,6 @@ levels(Rich$Type)[levels(Rich$Type)=="Tropical montane forest"] <- "Montane"
 #create column for reference as a factor
 Rich$Ran<-as.factor(Rich$Rich_Ref)
 Rich$Size<-as.factor(Rich$Size)
-
-
-ggplot(Rich,aes(y=Prop,x=Age,colour=Size))+geom_point()+facet_wrap(~Size)
-
-#redo sample sizes
-Rich$SS[Rich$SS<0]<-1
 
 #include only complete cases
 head(Rich)
@@ -77,7 +72,7 @@ Rich3<-subset(Rich3,Rich3$Prop<3)
 #Mixed model of Rich prop
 
 
-#null model
+#null model used to calculate deviance
 
 M0<-lmer(Proploss2~1+(Age|Ran),data=Rich3,REML=F)
 summary(M0)
@@ -86,12 +81,10 @@ summary(M0)
 nulldev<--2*logLik(M0)[1]
 nulldev
 
-#saturated models
-M1<-lmer(Proploss2~Age+I(Age^2)+log(Age)+(Age|Ran)+(1|Size),data=Rich3,REML=T)
-M2<-lmer(Proploss2~Age+I(Age^2)+log(Age)+(Age|Ran),data=Rich3,REML=T)
 
-plot(fitted(M1),M1@resid)
-plot(fitted(M2),M2@resid)
+#saturated models
+M1<-lmer(Proploss2~log(Age)+I(log(Age)^2)+(Age|Ran),data=Rich3,REML=T)
+M2<-lmer(Proploss2~log(Age)+I(log(Age)^2)+(Age|Ran)+(1|Size),data=Rich3,REML=T)
 
 #choose between the two random effects options based on AIC
 AIC(M1,M2)
@@ -99,12 +92,23 @@ AIC(M1,M2)
 #the one without size class is the better of the two, so we run the model this time
 #using maximum liklihood methods
 
-M1<-lmer(Proploss2~Age+I(Age^2)+log(Age)+(Age|Ran),data=Rich3,REML=F)
+#test whether I should be using log or linear terms
+M1lin<-lmer(Proploss2~Age+I(Age^2)+Disturbance+(Age|Ran),data=Rich3,REML=F)
+M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich3,REML=F)
+summary(M1log)
 
-plot(fitted(M1),M1@resid)
+
+#diagnostic plots
+plot(fitted(M1lin),M1lin@resid)
+plot(fitted(M1log),M1log@resid)
+
+#it looks like the one with the log terms is best - so we'll use that one.
+#we need to set REML=T for unbiased estimation first though
+M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich3,REML=T)
+
 
 #next we run all possible models
-MS1<- dredge(M1, trace = TRUE, rank = "AICc", REML = FALSE)
+MS1<- dredge(M1log, trace = TRUE, rank = "AICc", REML = F)
 
 #subset models with delta<7 to remove implausible models
 poss_mod<- get.models(MS1, subset = delta <7)
@@ -123,39 +127,191 @@ setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Repo
 write.csv(modsumm, "Model - Richness.csv")
 
 #create predictions based on models >0.95 weight
-averaged<-model.avg(MS1,subset=cumsum(weight)<=0.95)
+averaged<-model.avg(modsumm,subset=cumsum(weight)<=0.95)
 averaged2<-averaged$avg.model
 averaged2
 
 #output parameter estimates
-setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
+setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(averaged2, "Multimodel inferences Richness.csv") #save table
 
 
 #create new data
-Age<-seq(0.5,174,0.1)
-range(subset(Rich$Age,Rich$Tax=="Trees"))
+
+Age_a<-seq(0.5,100,0.1)
+Age_p<-seq(0.5,175,0.1)
+Age_s<-seq(0.5,80,0.1)
 
 #create predictions
-Int<-averaged2[1]
-Agesq<-(Age^2)*-0.0001569525
-logAge<-(log(Age))*0.9937220058
-Agen<--0.0176539905*Age
-preds<-Int+Agesq+logAge+Agen
 
-predstrees<-averaged2[1]+(averaged2[4]*(Age))+(averaged2[3]*log(Age))+((averaged2[2]*(Age^2)))
-SE_tree<-averaged2[1,2]+(averaged2[3,2])+averaged2[4,2]+(averaged2[2,2])
+predstrees_arab<-averaged2[1]+((averaged2[2]*log(Age_a)))
+predstrees_past<-averaged2[1]+((averaged2[2]*log(Age_p)))+averaged2[3]
+predstrees_shift<-averaged2[1]+((averaged2[2]*log(Age_s)))+averaged2[4]
+SE_tree_arab<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
+SE_tree_past<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
+SE_tree_shift<-averaged2[1,2]+(averaged2[2,2])+(averaged2[4,2])
 
 
-plot(Rich3$Age,Rich3$Prop)
-lines(Age,plogis(preds)*2)
-lines(Age,plogis((predstrees+(SE_tree))*2),lty=2)
-lines(Age,plogis((predstrees-(SE_tree))*2),lty=2)
+plot(Rich3$Age,Rich3$Prop,col=Rich3$Disturbance)
+lines(Age_a,plogis(predstrees_arab)*2)
+lines(Age_p,plogis(predstrees_past)*2)
+lines(Age_s,plogis(predstrees_shift)*2)
+
+
+
+lines(Age,(plogis(predstrees+(SE_tree))*2),lty=2)
+lines(Age,(plogis(predstrees-(SE_tree))*2),lty=2)
 
 #put into dataframes
 Tree_preds<-data.frame(Age=Age,preds=predstrees,SE=SE_tree,Tax="Trees")
-Epi_preds<-data.frame(Age=Age_epi,preds=predsepi,SE=SE_epi,Tax="Epiphytes")
 
+###########################################################################################
+###This bit of the script is for the####################################################### 
+###same type of model, but using epiphytes#################################################
+###########################################################################################
+
+
+#import aboveground biomass query
+Rich<- sqlFetch(sec, "Species richness query")
+head(Rich)
+
+#Rename columns
+colnames(Rich) <- c("ID", "Site","Disturbance","Age","Type","Measurement","Rich_Ref","Rich_Sec","Det","Tax","Size")
+head(Rich)
+range(Rich$Age)
+levels(Rich$Type)
+
+#subset data to remove logging, fire, missing values and other taxonomic groups
+Rich<-subset(Rich,Rich$Disturbance!="Fire")
+Rich<-subset(Rich,Rich$Disturbance!="Logging")
+Rich<-subset(Rich,Rich$Disturbance!="Agroforestry")
+Rich<-subset(Rich,Rich$Type!="NA")
+Rich<-subset(Rich,Rich$Rich_Sec!="0")
+Rich<-subset(Rich,Rich$Age!="0")
+Rich<-subset(Rich,Rich$Tax!="NA")
+Rich<-subset(Rich,Rich$Tax!="Herbs")
+Rich<-subset(Rich,Rich$Tax!="Shrub")
+Rich<-subset(Rich,Rich$Tax!="All plants")
+Rich<-subset(Rich,Rich$Tax!="Trees")
+
+#Calculate richness as a proportion of reference forest
+Rich$Prop<-(Rich$Rich_Sec/Rich$Rich_Ref)
+Rich$lnRR<-log(Rich$Rich_Sec)-log(Rich$Rich_Ref)
+Rich$Proploss<-(Rich$Rich_Sec-Rich$Rich_Ref)/Rich$Rich_Ref
+Rich$Proploss2<-(qlogis((Rich$Proploss+ 1) / 2))
+
+
+
+#change forest types
+levels(Rich$Type)[levels(Rich$Type)=="Tropical dry forest"] <- "Dry"
+levels(Rich$Type)[levels(Rich$Type)=="Tropical moist forest"] <- "Moist"
+levels(Rich$Type)[levels(Rich$Type)=="Tropical rainforest"] <- "Wet"
+levels(Rich$Type)[levels(Rich$Type)=="Tropical montane forest"] <- "Montane"
+
+#create column for reference as a factor
+Rich$Ran<-as.factor(Rich$Rich_Ref)
+
+#include only complete cases
+head(Rich)
+Rich2<-data.frame(ID=Rich$ID,Site=Rich$Site,Disturbance=Rich$Disturbance,Age=Rich$Age,Type=Rich$Type,Tax=Rich$Tax,Prop=Rich$Prop,lnRR=Rich$lnRR,Proploss=Rich$Proploss,Proploss2=Rich$Proploss2,Ran=Rich$Ran,Rich_Ref=Rich$Rich_Ref,Size=Rich$Size)
+
+#Mixed model of Rich prop
+
+
+#null model used to calculate deviance
+
+M0<-lmer(Proploss2~1+(Age|Ran),data=Rich2,REML=F)
+summary(M0)
+
+#set null deviance
+nulldev<--2*logLik(M0)[1]
+nulldev
+
+#test whether I should be using log or linear terms
+M1lin<-lmer(Proploss2~Age+I(Age^2)+Disturbance+(Age|Ran),data=Rich2,REML=F)
+M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich2,REML=F)
+
+#diagnostic plots
+plot(fitted(M1lin),M1lin@resid)
+plot(fitted(M1log),M1log@resid)
+AIC(M1lin,M1log)
+
+#it looks like the one with the linear terms is best - so we'll use that one.
+#we need to set REML=T for unbiased estimation first though
+M1lin<-lmer(Proploss2~Age+I(Age^2)+Disturbance+(Age|Ran),data=Rich2,REML=F)
+
+
+#next we run all possible models
+MS1<- dredge(M1lin, trace = TRUE, rank = "AICc", REML = F)
+
+#subset models with delta<7 to remove implausible models
+poss_mod<- get.models(MS1, subset = delta <7)
+modsumm <- model.sel(poss_mod, rank = "AICc")
+modsumm<-subset(modsumm,modsumm$delta<7)
+
+#calculate deviance of model
+modsumm$dev<--2*modsumm$logLik
+
+#calculate deviance explained for each model
+modsumm$dev_ex<-((nulldev-modsumm$dev)/nulldev)
+modsumm$dev_ex
+
+#this gives poor fits, lets just try it with the log data to see what happens
+M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich2,REML=F)
+MS2<- dredge(M1log, trace = TRUE, rank = "AICc", REML = F)
+poss_mod2<- get.models(MS2, subset = delta <7)
+modsumm2 <- model.sel(poss_mod2, rank = "AICc")
+modsumm2<-subset(modsumm2,modsumm2$delta<7)
+
+#calculate deviance of model
+modsumm2$dev<--2*modsumm2$logLik
+
+#calculate deviance explained for each model
+modsumm2$dev_ex<-((nulldev-modsumm$dev)/nulldev)
+modsumm2$dev_ex
+
+#these are even worse!! lets go with the first lot
+
+#output table as csv file
+write.csv(modsumm, "Model - Richness_epi.csv")
+
+#create predictions based on models >0.95 weight
+averaged<-model.avg(modsumm,subset=cumsum(weight)<=0.95)
+averaged2<-averaged$avg.model
+averaged2
+
+#output parameter estimates
+write.csv(averaged2, "Multimodel inferences Richness_epi.csv") #save table
+
+#create new data
+Age_p<-seq(0.5,140,0.1)
+Age_s<-seq(0.5,45,0.1)
+
+#create predictions
+predsepi_past<--0.7103054
+predsepi_shift<--0.7103054+1.9829972
+
+SE_epi_past<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
+SE_epi_shift<-averaged2[1,2]+(averaged2[2,2])+(averaged2[4,2])+(averaged2[3,2])
+
+
+plot(Rich2$Age,Rich2$Prop)
+abline(a=plogis(predsepi_past)*2,b=0)
+abline(a=plogis(predsepi_shift)*2,b=0)
+
+?abline
+
+
+
+lines(Age,(plogis(predstrees+(SE_tree))*2),lty=2)
+lines(Age,(plogis(predstrees-(SE_tree))*2),lty=2)
+
+#put into dataframes
+Tree_preds<-data.frame(Age=Age,preds=predstrees,SE=SE_tree,Tax="Trees")
+
+
+
+##########################################################################################
 #put into single dataframe
 Comb<-rbind(Tree_preds,Epi_preds)
 predictions<-data.frame(Comb,Type="Plant species richness")
