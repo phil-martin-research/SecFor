@@ -6,10 +6,11 @@
 ###################################################################################
 
 
+
 #load in necessary libraries
 library(RODBC)
 library(ggplot2)
-library(lme4)
+library(lmer)
 library(MuMIn)
 library(extrafont)
 
@@ -62,7 +63,6 @@ Rich$Size<-as.factor(Rich$Size)
 
 
 ggplot(Rich,aes(y=Prop,x=Age,colour=Size))+geom_point()+facet_wrap(~Size)
-ggplot(Rich,aes(y=Prop,x=Age,group=Ran))+geom_point()+geom_line()+facet_wrap(~Ran)
 
 #redo sample sizes
 Rich$SS[Rich$SS<0]<-1
@@ -79,24 +79,34 @@ Rich3<-subset(Rich3,Rich3$Prop<3)
 
 #null model
 
-M0<-lmer(Proploss2~1+(Age|Ran)+(1|Size),data=Rich3,REML=F)
+M0<-lmer(Proploss2~1+(Age|Ran),data=Rich3,REML=F)
 summary(M0)
 
 #set null deviance
 nulldev<--2*logLik(M0)[1]
 nulldev
 
-#saturated model
-M1<-lmer(Proploss2~Age+I(Age^2)+log(Age)+(Age|Ran)+(1|Size),data=Rich3,REML=F)
+#saturated models
+M1<-lmer(Proploss2~Age+I(Age^2)+log(Age)+(Age|Ran)+(1|Size),data=Rich3,REML=T)
+M2<-lmer(Proploss2~Age+I(Age^2)+log(Age)+(Age|Ran),data=Rich3,REML=T)
+
+plot(fitted(M1),M1@resid)
+plot(fitted(M2),M2@resid)
+
+#choose between the two random effects options based on AIC
+AIC(M1,M2)
+
+#the one without size class is the better of the two, so we run the model this time
+#using maximum liklihood methods
+
+M1<-lmer(Proploss2~Age+I(Age^2)+log(Age)+(Age|Ran),data=Rich3,REML=F)
 
 plot(fitted(M1),M1@resid)
 
-#model selection using AICc
-
-#run all possible models
+#next we run all possible models
 MS1<- dredge(M1, trace = TRUE, rank = "AICc", REML = FALSE)
 
-#subset models with delta<7 (to remove implausible models)
+#subset models with delta<7 to remove implausible models
 poss_mod<- get.models(MS1, subset = delta <7)
 modsumm <- model.sel(poss_mod, rank = "AICc")
 modsumm<-subset(modsumm,modsumm$delta<7)
@@ -127,12 +137,18 @@ Age<-seq(0.5,174,0.1)
 range(subset(Rich$Age,Rich$Tax=="Trees"))
 
 #create predictions
+Int<-averaged2[1]
+Agesq<-(Age^2)*-0.0001569525
+logAge<-(log(Age))*0.9937220058
+Agen<--0.0176539905*Age
+preds<-Int+Agesq+logAge+Agen
+
 predstrees<-averaged2[1]+(averaged2[4]*(Age))+(averaged2[3]*log(Age))+((averaged2[2]*(Age^2)))
 SE_tree<-averaged2[1,2]+(averaged2[3,2])+averaged2[4,2]+(averaged2[2,2])
 
 
 plot(Rich3$Age,Rich3$Prop)
-lines(Age,plogis(predstrees)*2)
+lines(Age,plogis(preds)*2)
 lines(Age,plogis((predstrees+(SE_tree))*2),lty=2)
 lines(Age,plogis((predstrees-(SE_tree))*2),lty=2)
 
