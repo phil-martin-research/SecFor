@@ -18,7 +18,7 @@ library(extrafont)
 sec <- odbcConnect("Secondary/Degraded forests")
 sqlTables(sec)
 
-#import aboveground biomass query
+#import species richness query
 Rich<- sqlFetch(sec, "Species richness query")
 head(Rich)
 
@@ -104,14 +104,14 @@ plot(fitted(M1log),M1log@resid)
 
 #it looks like the one with the log terms is best - so we'll use that one.
 #we need to set REML=T for unbiased estimation first though
-M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich3,REML=T)
+M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich3,REML=F)
 
 
 #next we run all possible models
 MS1<- dredge(M1log, trace = TRUE, rank = "AICc", REML = F)
 
 #subset models with delta<7 to remove implausible models
-poss_mod<- get.models(MS1, subset = delta <7)
+poss_mod<- get.models(MS1, subset = delta <7,REML=T)
 modsumm <- model.sel(poss_mod, rank = "AICc")
 modsumm<-subset(modsumm,modsumm$delta<7)
 
@@ -123,7 +123,7 @@ modsumm$dev_ex<-((nulldev-modsumm$dev)/nulldev)
 modsumm$dev_ex
 
 #output table as csv file
-setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
+setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(modsumm, "Model - Richness.csv")
 
 #create predictions based on models >0.95 weight
@@ -170,6 +170,9 @@ Tree_preds<-data.frame(Age=Age,preds=predstrees,SE=SE_tree,Tax="Trees")
 ###same type of model, but using epiphytes#################################################
 ###########################################################################################
 
+#connect to database
+sec <- odbcConnect("Secondary/Degraded forests")
+sqlTables(sec)
 
 #import aboveground biomass query
 Rich<- sqlFetch(sec, "Species richness query")
@@ -228,9 +231,8 @@ nulldev<--2*logLik(M0)[1]
 nulldev
 
 #test whether I should be using log or linear terms
-M1lin<-lmer(Proploss2~Age+I(Age^2)+Disturbance+(Age|Ran),data=Rich2,REML=F)
-M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich2,REML=F)
-
+M1lin<-lmer(Proploss2~Age+I(Age^2)+(Age|Ran),data=Rich2,REML=F)
+M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+(Age|Ran),data=Rich2,REML=F)
 #diagnostic plots
 plot(fitted(M1lin),M1lin@resid)
 plot(fitted(M1log),M1log@resid)
@@ -238,16 +240,14 @@ AIC(M1lin,M1log)
 
 #it looks like the one with the linear terms is best - so we'll use that one.
 #we need to set REML=T for unbiased estimation first though
-M1lin<-lmer(Proploss2~Age+I(Age^2)+Disturbance+(Age|Ran),data=Rich2,REML=F)
-
+M1lin<-lmer(Proploss2~Age+I(Age^2)+Disturbance+(Age|Ran),data=Rich2,REML=T)
 
 #next we run all possible models
 MS1<- dredge(M1lin, trace = TRUE, rank = "AICc", REML = F)
 
 #subset models with delta<7 to remove implausible models
-poss_mod<- get.models(MS1, subset = delta <7)
+poss_mod<- get.models(MS1, subset = delta <7,REML=T)
 modsumm <- model.sel(poss_mod, rank = "AICc")
-modsumm<-subset(modsumm,modsumm$delta<7)
 
 #calculate deviance of model
 modsumm$dev<--2*modsumm$logLik
@@ -255,6 +255,7 @@ modsumm$dev<--2*modsumm$logLik
 #calculate deviance explained for each model
 modsumm$dev_ex<-((nulldev-modsumm$dev)/nulldev)
 modsumm$dev_ex
+importance(modsumm)
 
 #this gives poor fits, lets just try it with the log data to see what happens
 M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich2,REML=F)
@@ -276,38 +277,35 @@ modsumm2$dev_ex
 write.csv(modsumm, "Model - Richness_epi.csv")
 
 #create predictions based on models >0.95 weight
-averaged<-model.avg(modsumm,subset=cumsum(weight)<=0.95)
+averaged<-model.avg(modsumm)
+averaged
 averaged2<-averaged$avg.model
 averaged2
+
 
 #output parameter estimates
 write.csv(averaged2, "Multimodel inferences Richness_epi.csv") #save table
 
 #create new data
 Age_p<-seq(0.5,140,0.1)
-Age_s<-seq(0.5,45,0.1)
+Age_shift<-seq(0.5,45,0.1)
 
 #create predictions
-predsepi_past<--0.7103054
-predsepi_shift<--0.7103054+1.9829972
+predsepi_p<-averaged2[1]+(averaged2[2]*Age_p)+(averaged2[3]*(Age_p^2))
+predsepi_shift<-averaged2[1]+(averaged2[2]*Age_p)+(averaged2[3]*(Age_p^2))
 
-SE_epi_past<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
-SE_epi_shift<-averaged2[1,2]+(averaged2[2,2])+(averaged2[4,2])+(averaged2[3,2])
+SE_epi<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
 
-
-plot(Rich2$Age,Rich2$Prop)
-abline(a=plogis(predsepi_past)*2,b=0)
-abline(a=plogis(predsepi_shift)*2,b=0)
-
-?abline
-
+plot(Rich2$Age,Rich2$Prop,col=Rich2$Disturbance)
+lines(Age_p,plogis(predsepi_past)*2)
+lines(Age_s,plogis(predsepi_shift)*2)
 
 
 lines(Age,(plogis(predstrees+(SE_tree))*2),lty=2)
 lines(Age,(plogis(predstrees-(SE_tree))*2),lty=2)
 
 #put into dataframes
-Tree_preds<-data.frame(Age=Age,preds=predstrees,SE=SE_tree,Tax="Trees")
+Epi_preds<-data.frame(Age=Age,preds=predstrees,SE=SE_tree,Tax="Trees")
 
 
 
