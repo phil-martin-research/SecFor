@@ -56,7 +56,6 @@ AGB$Ran<-as.factor(AGB$AGB_Ref)
 AGB2<-data.frame(Change=AGB$Proploss2,Change2=AGB$lnRR,Change3=AGB$Prop,Age=AGB$Age,Type=AGB$Type,Disturbance=AGB$Disturbance,Ran=AGB$Ran,Ref=as.numeric(AGB$AGB_Ref),Height=AGB$Height,WG=AGB$WG,LG=AGB$LG)
 
 #Mixed model of relative AGB
-#using nlme
 
 M1<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|WG)+(1|Height)+(1|LG),data=AGB2,REML=T)
 M2<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|WG)+(1|Height),data=AGB2,REML=T)
@@ -64,25 +63,25 @@ M3<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|Height),
 M4<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|Height),data=AGB2,REML=T)
 M5<-lmer(Change~Age+log(Age)+I(Age^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=T)
 
-
-
-plot(AGB2$Age,plogis(AGB2$Change-0.6244254)*2)
-plot(AGB2$Age,plogis(AGB2$Change)*2)
-
-mean(plogis(AGB2$Change-0.6244254)*2)
-mean(plogis(AGB2$Change)*2)
-
 summary(M5)
 
 #test for best random effects
 
-AIC(M1,M2,M3,M4,M5,M6)
+AIC(M1,M2,M3,M4,M5)
 
 #looks like it's M5
+
+#now we need to check whether it's best to include log or linear terms
+M1lin<-lmer(Change~Age+I(Age^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=T)
+M1log<-lmer(Change~log(Age)+I(log(Age)^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=T)
+
+AIC(M1lin,M1log)
+
+#the log model looks best
 #run it again but with REML=F to calculate variance etc
 
-M1<-lmer(Change~Age+log(Age)+I(Age^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=F)
-
+M1<-lmer(Change~log(Age)+I(log(Age)^2)+Disturbance*log(Age)+Type+(Age|Ran)+(1|LG),data=AGB2,REML=F)
+plot(AGB2)
 
 #fit null model and calculate the deviance for later calculations
 M0<-lmer(Change~1+(Age|Ran)+(1|WG)+(1|Height)+(1|LG),data=AGB2,REML=F)
@@ -90,14 +89,6 @@ null_dev<--2*logLik(M0)[1]
 
 #diagnostic plots
 plot(fitted(M1),M1@resid)
-
-
-#diagnostic plot of fitted curves
-plot(augPred(sat.agb.slope,primary=~Age),grid=T)
-
-#compare model fits
-plot(sat.agb.slope,residuals(.,level=0)~fitted(.,level=0))
-plot(sat.agb.slope,resid(.)~Age,abline=0)
 
 #fit all models
 MS1<- dredge(M1, trace = TRUE, rank = "AICc", REML = FALSE)
@@ -131,8 +122,14 @@ write.csv(averaged2, "Multimodel inferences Biomass.csv") #save table
 #create predictions based on model averaged parameters
 Age<-seq(0.5,82,.1)
 
-preds<-averaged2[1]+(averaged2[2]*Age)+(averaged2[3]*(Age^2))+(averaged2[4]*(log(Age)))
-SE<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])+(averaged2[4,2])
+preds<-averaged2[1]+(averaged2[2]*log(Age))+(averaged2[3]*(log(Age)^2))
+SE<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
+
+plot(AGB2$Age,plogis(AGB2$Change)*2)
+lines(Age,plogis(preds)*2)
+lines(Age,plogis(preds+(2*SE))*2,lty=2)
+lines(Age,plogis(preds-(2*SE))*2,lty=2)
+
 
 #export model predictions for later use
 predictions<-data.frame(Prediction=preds,SE=SE,Type="Aboveground biomass")
