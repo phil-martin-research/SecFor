@@ -125,6 +125,8 @@ Age<-seq(0.5,82,.1)
 preds<-averaged2[1]+(averaged2[2]*log(Age))+(averaged2[3]*(log(Age)^2))
 SE<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
 
+
+#plot these results
 plot(AGB2$Age,plogis(AGB2$Change)*2)
 lines(Age,plogis(preds)*2)
 lines(Age,plogis(preds+(2*SE))*2,lty=2)

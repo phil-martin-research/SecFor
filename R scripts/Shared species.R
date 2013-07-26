@@ -56,10 +56,7 @@ MS1<- dredge(M1, trace = TRUE, rank = "AICc", REML = FALSE)
 poss_mod<- get.models(MS1, subset = delta <7)
 modsumm <- model.sel(poss_mod, rank = "AICc")
 modsumm
-plot(Tree_prop$Age,Tree_prop$Prop)
-Age<-seq(0,115,0.1)
-lines(Age,1/(1+1/(exp(-1.551+(0.01726*(Age))))))
-lines(Age,(plogis(-2.2035532+(Age*0.0151852)*2))
+
 #calculate deviance of model
 modsumm$dev<--2*modsumm$logLik
 
@@ -72,8 +69,8 @@ write.csv(modsumm, "Model - Species pool.csv")
 
 #calculate model averaged coefficients
 
-#create predictions based on models >0.6 weight
-averaged<-model.avg(MS1,subset=cumsum(weight)<=0.6)
+#create predictions based on models >0.95 weight
+averaged<-model.avg(MS1,subset=cumsum(weight)<=0.95)
 averaged2<-averaged$avg.model
 write.csv(averaged2, "Multimodel inferences Prop primary.csv") #save table
 
