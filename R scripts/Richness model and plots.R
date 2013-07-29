@@ -25,8 +25,6 @@ head(Rich)
 #Rename columns
 colnames(Rich) <- c("ID", "Site","Disturbance","Age","Type","Measurement","Rich_Ref","Rich_Sec","Det","Tax","Size")
 head(Rich)
-range(Rich$Age)
-levels(Rich$Type)
 
 #subset data to remove logging, fire, missing values and other taxonomic groups
 Rich<-subset(Rich,Rich$Disturbance!="Fire")
@@ -70,7 +68,6 @@ Rich3<-subset(Rich3,Rich3$Prop<3)
 
 
 #null model used to calculate deviance
-
 M0<-lmer(Proploss2~1+(Age|Ran),data=Rich3,REML=F)
 summary(M0)
 
@@ -91,7 +88,9 @@ AIC(M1,M2)
 #test whether I should be using log or linear terms
 M1lin<-lmer(Proploss2~Age+I(Age^2)+Disturbance+(Age|Ran),data=Rich3,REML=F)
 M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich3,REML=F)
-summary(M1log)
+M1log<-lmer(Proploss2~log(Age)+(Age|Ran),data=Rich3,REML=F)
+
+
 
 
 #diagnostic plots
@@ -101,98 +100,55 @@ plot(fitted(M1log),M1log@resid)
 #it looks like the one with the log terms is best - so we'll use that one.
 #we need to set REML=T for unbiased estimation first though
 M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich3,REML=T)
-M2log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+(Age|Ran),data=Rich3,REML=F)
-M3log<-lmer(Proploss2~log(Age)+(Age|Ran),data=Rich3,REML=F)
-M4log<-lmer(Proploss2~log(Age)+Disturbance+(Age|Ran),data=Rich3,REML=F)
-M5log<-lmer(Proploss2~Disturbance+(Age|Ran),data=Rich3,REML=F)
-M6log<-lmer(Proploss2~1+(Age|Ran),data=Rich3,REML=F)
-
-plot(Rich3$Age,plogis(predict(M1log))*2)
-
-plot(Age,(log(Age)^2))
-
-M1log<-lmer(Proploss2~log(Age)+Disturbance+(Age|Ran),data=Rich3,REML=T)
-
-plot(Rich3$Age,plogis(predict(M4log))*2)
-
-summary(M4log)
-
 
 #next we run all possible models
-MS1<- dredge(M1log, trace = TRUE, rank = "AICc", REML = F)
+MS1<-dredge(M1log, trace = TRUE, rank = "AICc", REML = F)
 
 #subset models with delta<7 to remove implausible models
 poss_mod<- get.models(MS1, subset = delta <7)
 modsumm <- model.sel(poss_mod, rank = "AICc")
 modsumm
-importance(modsumm)
 
-#calculate deviance of model
-modsumm$dev<--2*modsumm$logLik
+#calculate marginal r squared for 
+#each model using equation from Nakagawa et al  2013
+D7_1<-lmer(Proploss2~log(Age)+(Age|Ran),data=Rich3,REML=F)
+D7_2<-lmer(Proploss2~log(Age)+Disturbance+(Age|Ran),data=Rich3,REML=F)
+D7_3<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich3,REML=T)
+D7_4<-lmer(Proploss2~log(Age)+Disturbance+(Age|Ran),data=Rich3,REML=F)
 
-#calculate deviance explained for each model
-modsumm$dev_ex<-((nulldev-modsumm$dev)/nulldev)
-modsumm$dev_ex
+Rsquared_trees<-rbind(r.squaredGLMM(D7_1),r.squaredGLMM(D7_2),r.squaredGLMM(D7_3),r.squaredGLMM(D7_4))
+
+#add this to model summary output
+modsumm$MRsquared<-Rsquared_trees[,1]
 
 #output table as csv file
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(modsumm, "Model - Richness.csv")
 
-#create predictions based on models >0.95 weight
+#get parameter estimates for models with delta<7
 averaged<-model.avg(modsumm,subset=delta<7)
 averaged2<-averaged$avg.model
 averaged2
-
-plot(Rich3$Age,Rich3$Prop,col=Rich$Disturbance)
-lines(Age_a,plogis(-3.38514674+(0.98333095*log(Age_a))+(-0.06739516*(log(Age_a)^2)))*2)
-lines(Age_p,plogis(-3.38514674+(0.98333095*log(Age_p))+(-0.06739516*(log(Age_p)^2))+0.58893151)*2)
-lines(Age_s,plogis(-3.38514674+(0.98333095*log(Age_s))+(-0.06739516*(log(Age_s)^2))+-0.20373014)*2)
 
 #output parameter estimates
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(averaged2, "Multimodel inferences Richness.csv") #save table
 
-
 #create new data
+Age_tree<-seq(0.5,175,0.1)
 
-Age_a<-seq(0.5,100,0.1)
-Age_p<-seq(0.5,175,0.1)
-Age_s<-seq(0.5,80,0.1)
+#create predictions using variables with weight >0.3
+predstrees<-averaged2[1]+(averaged2[2]*log(Age_tree))
+SE_tree<-averaged2[1,2]+(averaged2[2,2])
 
-#create predictions
-
-predstrees_arab<-averaged2[1]+(averaged2[2]*log(Age_a))+(averaged2[5]*((log(Age_a))^2))
-predstrees_past<-averaged2[1]+((averaged2[2]*log(Age_p)))+(averaged2[5]*(log(Age_p)^2))+(averaged2[3])
-predstrees_shift<-averaged2[1]+((averaged2[2]*log(Age_s)))+(averaged2[5]*(log(Age_s)^2))+(averaged2[4])
-SE_tree_arab<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
-SE_tree_past<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
-SE_tree_shift<-averaged2[1,2]+(averaged2[2,2])+(averaged2[4,2])
-plogis(predstrees_arab)*2
-
-plot(Rich3$Age,plogis(Rich3$Proploss2)*2,col=Rich3$Disturbance)
-lines(Age_a,plogis(predstrees_arab)*2)
-lines(Age_p,(predstrees_past))
-lines(Age_s,(predstrees_shift))
-
-?ifelse
-Rich3$Preds<-averaged2[1]+(log(Rich3$Age)*averaged2[4])+((log(Rich3$Age)^2)*averaged2[5])
-Rich3$Preds<-ifelse(Rich3$Disturbance=="Pasture",averaged2[1]+(log(Rich3$Age)*averaged2[4])+((log(Rich3$Age)^2)*averaged2[5])+(averaged2[2]),Rich3$Preds)
-Rich3$Preds<-ifelse(Rich3$Disturbance=="Shifting agriculture",averaged2[1]+(log(Rich3$Age)*averaged2[4])+((log(Rich3$Age)^2)*averaged2[5])+(averaged2[3]),Rich3$Preds)
-
-Rich3$Preds<--3.45160+(log(Rich3$Age)*0.85944)
-Rich3$Preds<-ifelse(Rich3$Disturbance=="Pasture",-3.45160+(log(Rich3$Age)*0.85944)+0.16376,Rich3$Preds)
-Rich3$Preds<-ifelse(Rich3$Disturbance=="Shifting agriculture",-3.45160+(log(Rich3$Age)*0.85944)-0.20011,Rich3$Preds)
-
-
-plot(Rich3$Age,plogis(Rich3$Preds)*2,col=Rich3$Disturbance)
-abline(a=0,b=0)
-
-
-lines(Age,(plogis(predstrees+(SE_tree))*2),lty=2)
-lines(Age,(plogis(predstrees-(SE_tree))*2),lty=2)
+#plot these predictions
+plot(Rich3$Age,plogis(Rich3$Proploss2)*2)
+lines(Age_tree,plogis(predstrees)*2)
+lines(Age_tree,plogis(predstrees+(1.96*SE_tree))*2)
+lines(Age_tree,plogis(predstrees-(1.96*SE_tree))*2)
 
 #put into dataframes
-Tree_preds<-data.frame(Age=Age,preds=predstrees,SE=SE_tree,Tax="Trees")
+Tree_preds<-data.frame(Age=Age_tree,preds=predstrees,SE=SE_tree,Tax="Trees")
 
 ###########################################################################################
 ###This bit of the script is for the####################################################### 
@@ -251,9 +207,9 @@ Rich2<-data.frame(ID=Rich$ID,Site=Rich$Site,Disturbance=Rich$Disturbance,Age=Ric
 
 
 #null model used to calculate deviance
-
 M0<-lmer(Proploss2~1+(Age|Ran),data=Rich2,REML=F)
 summary(M0)
+str(M0)
 
 #set null deviance
 nulldev<--2*logLik(M0)[1]
@@ -262,46 +218,52 @@ nulldev
 #test whether I should be using log or linear terms
 M1lin<-lmer(Proploss2~Age+I(Age^2)+(Age|Ran),data=Rich2,REML=F)
 M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+(Age|Ran),data=Rich2,REML=F)
+
 #diagnostic plots
 plot(fitted(M1lin),M1lin@resid)
-plot(fitted(M1log),M1log@resid)
+plot(fitted(M1log),M1log@resid,col=Rich2$Disturbance)
+
 AIC(M1lin,M1log)
 
 #it looks like the one with the linear terms is best - so we'll use that one.
 #we need to set REML=T for unbiased estimation first though
-M1lin<-lmer(Proploss2~Age+I(Age^2)+Disturbance+(Age|Ran),data=Rich2,REML=T)
+M1lin<-lmer(Proploss2~Age+I(Age^2)+(Age|Ran),data=Rich2,REML=T)
 
 #next we run all possible models
 MS1<- dredge(M1lin, trace = TRUE, rank = "AICc", REML = F)
 
 #subset models with delta<7 to remove implausible models
-poss_mod<- get.models(MS1, subset = delta <7,REML=T)
+poss_mod<- get.models(MS1, subset = delta <7)
 modsumm <- model.sel(poss_mod, rank = "AICc")
+modsumm<-subset(modsumm,delta<7)
+modsumm
+Rich2$logAge<-log(Rich2$Age)
+Rich2$logAgesq<-log(Rich2$Age)^2
 
-#calculate deviance of model
-modsumm$dev<--2*modsumm$logLik
 
-#calculate deviance explained for each model
-modsumm$dev_ex<-((nulldev-modsumm$dev)/nulldev)
-modsumm$dev_ex
-importance(modsumm)
+#this is a crap model, what happens with log terms?
+M1log<-lmer(Proploss2~logAge+logAgesq+(Age|Ran),data=Rich2,REML=F)
 
-#this gives poor fits, lets just try it with the log data to see what happens
-M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich2,REML=F)
-MS2<- dredge(M1log, trace = TRUE, rank = "AICc", REML = F)
-poss_mod2<- get.models(MS2, subset = delta <7)
-modsumm2 <- model.sel(poss_mod2, rank = "AICc")
-modsumm2<-subset(modsumm2,modsumm2$delta<7)
+MS1_log<- dredge(M1log, trace = TRUE, rank = "AICc", subset=dc(logAge,logAgesq),REML = F)
 
-#calculate deviance of model
-modsumm2$dev<--2*modsumm2$logLik
+#subset models with delta<7 to remove implausible models
+poss_mod<- get.models(MS1_log, subset = delta <7)
+modsumm <- model.sel(poss_mod, rank = "AICc")
+modsumm
+modsumm<-subset(modsumm,delta<7)
+modsumm
 
-#calculate deviance explained for each model
-modsumm2$dev_ex<-((nulldev-modsumm$dev)/nulldev)
-modsumm2$dev_ex
+#calculate marginal r squared for 
+#each model using equation from Nakagawa et al  2013
+D7_1<-lmer(Proploss2~1+logAge+(Age|Ran),data=Rich2,REML=F)
+D7_2<-lmer(Proploss2~1+(Age|Ran),data=Rich2,REML=F)
+D7_3<-lmer(Proploss2~1+logAge+logAgesq+(Age|Ran),data=Rich2,REML=F)
 
-#these are even worse!! lets go with the first lot
+Rsquared_epi<-rbind(r.squaredGLMM(D7_1),r.squaredGLMM(D7_2),r.squaredGLMM(D7_3))
 
+#add this to model summary output
+modsumm$MRsquared<-Rsquared_epi[,1]
+      
 #output table as csv file
 write.csv(modsumm, "Model - Richness_epi.csv")
 
@@ -311,41 +273,63 @@ averaged
 averaged2<-averaged$avg.model
 averaged2
 
-
 #output parameter estimates
 write.csv(averaged2, "Multimodel inferences Richness_epi.csv") #save table
 
 #create new data
-Age_p<-seq(0.5,140,0.1)
-Age_shift<-seq(0.5,45,0.1)
+Age_epi<-seq(min(Rich2$Age),max(Rich2$Age),0.1)
+Pred_epi<-averaged2[1]+(averaged2[2]*log(Age_epi))
+SE_epi<-averaged2[1,1]+(averaged2[2,1])
 
 #create predictions
-predsepi_p<-averaged2[1]+(averaged2[2]*Age_p)+(averaged2[3]*(Age_p^2))
-predsepi_shift<-averaged2[1]+(averaged2[2]*Age_p)+(averaged2[3]*(Age_p^2))
-
-SE_epi<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
-
-plot(Rich2$Age,Rich2$Prop,col=Rich2$Disturbance)
-lines(Age_p,plogis(predsepi_past)*2)
-lines(Age_s,plogis(predsepi_shift)*2)
-
-
-lines(Age,(plogis(predstrees+(SE_tree))*2),lty=2)
-lines(Age,(plogis(predstrees-(SE_tree))*2),lty=2)
 
 #put into dataframes
-Epi_preds<-data.frame(Age=Age,preds=predstrees,SE=SE_tree,Tax="Trees")
-
-
+Epi_preds<-data.frame(Age=Age_epi,preds=Pred_epi,SE=SE_epi,Tax="Epiphytes")
+Epi_preds
 
 ##########################################################################################
 #put into single dataframe
+
+#limit tree preds to <100 years
+Tree_preds<-subset(Tree_preds,Age<100)
+
+
 Comb<-rbind(Tree_preds,Epi_preds)
 predictions<-data.frame(Comb,Type="Plant species richness")
 
-setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
-write.csv(predictions, "Model predictions - Richness.csv") #save table
+#connect to database
+sec <- odbcConnect("Secondary/Degraded forests")
+sqlTables(sec)
 
+#import species richness query
+Rich<- sqlFetch(sec, "Species richness query")
+head(Rich)
+
+#Rename columns
+colnames(Rich) <- c("ID", "Site","Disturbance","Age","Type","Measurement","Rich_Ref","Rich_Sec","Det","Tax","Size")
+head(Rich)
+
+#subset data to remove logging, fire, missing values and other taxonomic groups
+Rich<-subset(Rich,Rich$Disturbance!="Fire")
+Rich<-subset(Rich,Rich$Disturbance!="Logging")
+Rich<-subset(Rich,Rich$Disturbance!="Agroforestry")
+Rich<-subset(Rich,Rich$Type!="NA")
+Rich<-subset(Rich,Rich$Rich_Sec!="0")
+Rich<-subset(Rich,Rich$Age!="0")
+Rich<-subset(Rich,Rich$Tax!="NA")
+Rich<-subset(Rich,Rich$Tax!="Herbs")
+Rich<-subset(Rich,Rich$Tax!="Shrub")
+Rich<-subset(Rich,Rich$Tax!="All plants")
+
+#Calculate richness as a proportion of reference forest
+Rich$Prop<-(Rich$Rich_Sec/Rich$Rich_Ref)
+Rich$lnRR<-log(Rich$Rich_Sec)-log(Rich$Rich_Ref)
+Rich$Proploss<-(Rich$Rich_Sec-Rich$Rich_Ref)/Rich$Rich_Ref
+Rich$Proploss2<-(qlogis((Rich$Proploss+ 1) / 2))
+
+
+setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
+write.csv(predictions, "Model predictions - Richness.csv") #save table
 
 #produce plots of model
 head(Rich)
@@ -359,13 +343,23 @@ e<-d+theme(panel.grid.major = element_line(colour =NA))+scale_colour_discrete("T
 f<-e+coord_cartesian(ylim=c(0,1.8),xlim=c(0,175))+geom_hline(y=1,lty=2)+theme(legend.position="none")
 f+theme(text=element_text(family="Times"))+scale_colour_manual(values=c("black","black"))
 f+theme(text=element_text(family="Times"))
-setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Figures")
-ggsave(filename="Richness_colour.pdf",height=87.5,width=175,dpi=1200,units="mm")
-ggsave(filename="Richness_bw.pdf",height=87.5,width=175,dpi=1200,units="mm")
+
+#produce plots of model without CIs
+head(Rich)
+theme_set(theme_bw(base_size=12))
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+a<-qplot(data=Rich,x=Age,y=Prop,geom="point",shape=I(1),colour=Tax,size=I(2),group=Tax)+geom_line(data=Comb,aes(x=Age,y=plogis(preds)*2),size=1.5)
+b<-a+facet_wrap(~Tax)
+c<-b
+d<-c+ylab("species richness proportional\nto reference forest")+xlab("time since last disturbance (years)")
+e<-d+theme(panel.grid.major = element_line(colour =NA))+scale_colour_discrete("Taxonomic group")
+f<-e+coord_cartesian(ylim=c(0,1.8),xlim=c(0,175))+geom_hline(y=1,lty=2)+theme(legend.position="none")
+f+theme(text=element_text(family="Times"))+scale_colour_manual(values=c("black","black"))
+f+theme(text=element_text(family="Times"))
+
+setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Figures")
+ggsave(filename="Richness_bw.png",height=87.5,width=175,dpi=1200,units="mm")
 ggsave(filename="Richness_colour.png",height=87.5,width=175,dpi=1200,units="mm")
-
-
-?ggsave
 
 
 #produce plots of model for presentations
