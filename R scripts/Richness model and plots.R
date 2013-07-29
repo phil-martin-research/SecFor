@@ -41,9 +41,6 @@ Rich<-subset(Rich,Rich$Tax!="Shrub")
 Rich<-subset(Rich,Rich$Tax!="All plants")
 Rich<-subset(Rich,Rich$Tax!="Epiphytes")
 
-
-
-
 #Calculate richness as a proportion of reference forest
 Rich$Prop<-(Rich$Rich_Sec/Rich$Rich_Ref)
 Rich$lnRR<-log(Rich$Rich_Sec)-log(Rich$Rich_Ref)
@@ -81,7 +78,6 @@ summary(M0)
 nulldev<--2*logLik(M0)[1]
 nulldev
 
-
 #saturated models
 M1<-lmer(Proploss2~log(Age)+I(log(Age)^2)+(Age|Ran),data=Rich3,REML=T)
 M2<-lmer(Proploss2~log(Age)+I(log(Age)^2)+(Age|Ran)+(1|Size),data=Rich3,REML=T)
@@ -104,16 +100,32 @@ plot(fitted(M1log),M1log@resid)
 
 #it looks like the one with the log terms is best - so we'll use that one.
 #we need to set REML=T for unbiased estimation first though
-M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich3,REML=F)
+M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+Disturbance+(Age|Ran),data=Rich3,REML=T)
+M2log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+(Age|Ran),data=Rich3,REML=F)
+M3log<-lmer(Proploss2~log(Age)+(Age|Ran),data=Rich3,REML=F)
+M4log<-lmer(Proploss2~log(Age)+Disturbance+(Age|Ran),data=Rich3,REML=F)
+M5log<-lmer(Proploss2~Disturbance+(Age|Ran),data=Rich3,REML=F)
+M6log<-lmer(Proploss2~1+(Age|Ran),data=Rich3,REML=F)
+
+plot(Rich3$Age,plogis(predict(M1log))*2)
+
+plot(Age,(log(Age)^2))
+
+M1log<-lmer(Proploss2~log(Age)+Disturbance+(Age|Ran),data=Rich3,REML=T)
+
+plot(Rich3$Age,plogis(predict(M4log))*2)
+
+summary(M4log)
 
 
 #next we run all possible models
 MS1<- dredge(M1log, trace = TRUE, rank = "AICc", REML = F)
 
 #subset models with delta<7 to remove implausible models
-poss_mod<- get.models(MS1, subset = delta <7,REML=T)
+poss_mod<- get.models(MS1, subset = delta <7)
 modsumm <- model.sel(poss_mod, rank = "AICc")
-modsumm<-subset(modsumm,modsumm$delta<7)
+modsumm
+importance(modsumm)
 
 #calculate deviance of model
 modsumm$dev<--2*modsumm$logLik
@@ -127,9 +139,14 @@ setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publicati
 write.csv(modsumm, "Model - Richness.csv")
 
 #create predictions based on models >0.95 weight
-averaged<-model.avg(modsumm,subset=cumsum(weight)<=0.95)
+averaged<-model.avg(modsumm,subset=delta<7)
 averaged2<-averaged$avg.model
 averaged2
+
+plot(Rich3$Age,Rich3$Prop,col=Rich$Disturbance)
+lines(Age_a,plogis(-3.38514674+(0.98333095*log(Age_a))+(-0.06739516*(log(Age_a)^2)))*2)
+lines(Age_p,plogis(-3.38514674+(0.98333095*log(Age_p))+(-0.06739516*(log(Age_p)^2))+0.58893151)*2)
+lines(Age_s,plogis(-3.38514674+(0.98333095*log(Age_s))+(-0.06739516*(log(Age_s)^2))+-0.20373014)*2)
 
 #output parameter estimates
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
@@ -144,19 +161,31 @@ Age_s<-seq(0.5,80,0.1)
 
 #create predictions
 
-predstrees_arab<-averaged2[1]+((averaged2[2]*log(Age_a)))
-predstrees_past<-averaged2[1]+((averaged2[2]*log(Age_p)))+averaged2[3]
-predstrees_shift<-averaged2[1]+((averaged2[2]*log(Age_s)))+averaged2[4]
+predstrees_arab<-averaged2[1]+(averaged2[2]*log(Age_a))+(averaged2[5]*((log(Age_a))^2))
+predstrees_past<-averaged2[1]+((averaged2[2]*log(Age_p)))+(averaged2[5]*(log(Age_p)^2))+(averaged2[3])
+predstrees_shift<-averaged2[1]+((averaged2[2]*log(Age_s)))+(averaged2[5]*(log(Age_s)^2))+(averaged2[4])
 SE_tree_arab<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
 SE_tree_past<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
 SE_tree_shift<-averaged2[1,2]+(averaged2[2,2])+(averaged2[4,2])
+plogis(predstrees_arab)*2
 
-
-plot(Rich3$Age,Rich3$Prop,col=Rich3$Disturbance)
+plot(Rich3$Age,plogis(Rich3$Proploss2)*2,col=Rich3$Disturbance)
 lines(Age_a,plogis(predstrees_arab)*2)
-lines(Age_p,plogis(predstrees_past)*2)
-lines(Age_s,plogis(predstrees_shift)*2)
+lines(Age_p,(predstrees_past))
+lines(Age_s,(predstrees_shift))
 
+?ifelse
+Rich3$Preds<-averaged2[1]+(log(Rich3$Age)*averaged2[4])+((log(Rich3$Age)^2)*averaged2[5])
+Rich3$Preds<-ifelse(Rich3$Disturbance=="Pasture",averaged2[1]+(log(Rich3$Age)*averaged2[4])+((log(Rich3$Age)^2)*averaged2[5])+(averaged2[2]),Rich3$Preds)
+Rich3$Preds<-ifelse(Rich3$Disturbance=="Shifting agriculture",averaged2[1]+(log(Rich3$Age)*averaged2[4])+((log(Rich3$Age)^2)*averaged2[5])+(averaged2[3]),Rich3$Preds)
+
+Rich3$Preds<--3.45160+(log(Rich3$Age)*0.85944)
+Rich3$Preds<-ifelse(Rich3$Disturbance=="Pasture",-3.45160+(log(Rich3$Age)*0.85944)+0.16376,Rich3$Preds)
+Rich3$Preds<-ifelse(Rich3$Disturbance=="Shifting agriculture",-3.45160+(log(Rich3$Age)*0.85944)-0.20011,Rich3$Preds)
+
+
+plot(Rich3$Age,plogis(Rich3$Preds)*2,col=Rich3$Disturbance)
+abline(a=0,b=0)
 
 
 lines(Age,(plogis(predstrees+(SE_tree))*2),lty=2)
