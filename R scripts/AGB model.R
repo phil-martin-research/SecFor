@@ -56,7 +56,6 @@ AGB$Ran<-as.factor(AGB$AGB_Ref)
 AGB2<-data.frame(Change=AGB$Proploss2,Change2=AGB$lnRR,Change3=AGB$Prop,Age=AGB$Age,Type=AGB$Type,Disturbance=AGB$Disturbance,Ran=AGB$Ran,Ref=as.numeric(AGB$AGB_Ref),Height=AGB$Height,WG=AGB$WG,LG=AGB$LG)
 
 #Mixed model of relative AGB
-
 M1<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|WG)+(1|Height)+(1|LG),data=AGB2,REML=T)
 M2<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|WG)+(1|Height),data=AGB2,REML=T)
 M3<-lmer(Change~Age+I(Age^2)+log(Age)+Disturbance*Age+Type+(Age|Ran)+(1|Height),data=AGB2,REML=T)
@@ -69,19 +68,19 @@ summary(M5)
 
 AIC(M1,M2,M3,M4,M5)
 
-#looks like it's M5
+#looks like it's M5 - so we need to include random intercept and
+#slope with age for each study along with whehter allometry was local
+#or more general
 
 #now we need to check whether it's best to include log or linear terms
-M1lin<-lmer(Change~Age+I(Age^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=T)
-M1log<-lmer(Change~log(Age)+I(log(Age)^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=T)
+M1lin<-lmer(Change~Age+I(Age^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=F)
+M1log<-lmer(Change~log(Age)+I(log(Age)^2)+Disturbance*Age+Type+(Age|Ran)+(1|LG),data=AGB2,REML=F)
 
 AIC(M1lin,M1log)
 
 #the log model looks best
-#run it again but with REML=F to calculate variance etc
-
-M1<-lmer(Change~log(Age)+I(log(Age)^2)+Disturbance*log(Age)+Type+(Age|Ran)+(1|LG),data=AGB2,REML=F)
-plot(AGB2)
+#run it again but with REML=T
+M1<-lmer(Change~log(Age)+I(log(Age)^2)+Disturbance*log(Age)+Type+(Age|Ran)+(1|LG),data=AGB2,REML=T)
 
 #fit null model and calculate the deviance for later calculations
 M0<-lmer(Change~1+(Age|Ran)+(1|WG)+(1|Height)+(1|LG),data=AGB2,REML=F)
@@ -90,8 +89,13 @@ null_dev<--2*logLik(M0)[1]
 #diagnostic plots
 plot(fitted(M1),M1@resid)
 
+AGB2$logAge<-log(AGB2$Age)
+AGB2$logAgesq<-log(AGB2$Age)^2
+
+M1<-lmer(Change~logAge+Disturbance*logAge+Type+(Age|Ran)+(1|LG),data=AGB2,REML=F)
+
 #fit all models
-MS1<- dredge(M1, trace = TRUE, rank = "AICc", REML = FALSE)
+MS1<- dredge(M1, trace = TRUE, rank = "AICc",REML = FALSE)
      
 #subset models with delta<7 (to remove implausible models)
 poss_mod<- get.models(MS1, subset = delta<7)
@@ -106,24 +110,40 @@ modsumm$dev_ex<-1-(modsumm$dev/null_dev)
 modsumm
 importance(modsumm)
 
+#calculate marginal r squared for 
+#each model using equation from Nakagawa et al  2013
+D7_1<-lmer(Change~1+logAge+(Age|Ran),data=AGB2,REML=F)
+D7_2<-lmer(Change~1+logAge+Disturbance+(Age|Ran),data=AGB2,REML=F)
+D7_3<-lmer(Change~1+logAge+Disturbance+Disturbance*logAge+(Age|Ran),data=AGB2,REML=F)
+D7_4<-lmer(Change~1+logAge+Type+(Age|Ran),data=AGB2,REML=F)
+
+Rsquared_epi<-rbind(r.squaredGLMM(D7_1),r.squaredGLMM(D7_2),r.squaredGLMM(D7_3),r.squaredGLMM(D7_4))
+
+#add this to model summary output
+modsumm$MRsquared<-Rsquared_epi[,1]
+
 #output table as csv file
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(modsumm, "Model - Biomass.csv")
 
 #create predictions based on models >0.95 weight
-averaged<-model.avg(MS1,subset=cumsum(weight)<=0.95)
+averaged<-model.avg(MS1,subset=delta<7)
 averaged2<-averaged$avg.model
+importance(averaged)
 
 #output parameter estimates
 write.csv(averaged2, "Multimodel inferences Biomass.csv") #save table
 
+#output importance values
+importance<-data.frame(Variable=c("Intercept",labels(importance(modsumm))),Importance=c(1,as.vector(importance(modsumm))))
+importance
+write.csv(importance, "Importance-AGB.csv") #save table
 
-#export parameter estimates
 #create predictions based on model averaged parameters
 Age<-seq(0.5,82,.1)
 
-preds<-averaged2[1]+(averaged2[2]*log(Age))+(averaged2[3]*(log(Age)^2))
-SE<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
+preds<-averaged2[1]+(averaged2[2]*log(Age))
+SE<-averaged2[1,2]+(averaged2[2,2])
 
 
 #plot these results
@@ -138,17 +158,5 @@ predictions<-data.frame(Prediction=preds,SE=SE,Type="Aboveground biomass")
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(predictions, "Model predictions - Biomass.csv") #save table
 
-#Summary table of estimates
-setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
-M1.results <- matrix(data = NA, nrow =length(averaged$term.names), ncol = 4) #create table
-rownames(M1.results) <- averaged$term.names  #rows named after parameters
-colnames(M1.results) <- c("Coefficients","SE","Lower CI","Upper CI") #columns names after attributes
-M1.results[,1] <- (averaged2[,1]) #fill up table
-M1.results[,2] <- (averaged2[,2])
-M1.results[,3] <- (averaged2[,4])
-M1.results[,4] <- (averaged2[,5])
-M1.results
-
-write.csv(M1.results, "Multimodel inferences Biomass.csv") #save table
 
 
