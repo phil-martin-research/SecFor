@@ -91,10 +91,10 @@ modsumm<-subset(modsumm,modsumm$delta<7)
 
 #calculate marginal r squared for 
 #each model using equation from Nakagawa et al  2013
-D7_1<-lmer(Change~1+log(Age)+(Age|Ran),data=AGB2,REML=F)
-D7_2<-lmer(Change~1+log(Age)+Disturbance+(Age|Ran),data=AGB2,REML=F)
-D7_3<-lmer(Change~1+log(Age)+Disturbance+Disturbance*log(Age)+(Age|Ran),data=AGB2,REML=F)
-D7_4<-lmer(Change~1+log(Age)+Type+(Age|Ran),data=AGB2,REML=F)
+D7_1<-lmer(Change~1+log(Age)+(Age|Ran)+(1|LG),data=AGB2,REML=F)
+D7_2<-lmer(Change~1+log(Age)+Disturbance+(Age|Ran)+(1|LG),data=AGB2,REML=F)
+D7_3<-lmer(Change~1+log(Age)+Disturbance+Disturbance*log(Age)+(Age|Ran)+(1|LG),data=AGB2,REML=F)
+D7_4<-lmer(Change~1+log(Age)+Type+(Age|Ran)+(1|LG),data=AGB2,REML=F)
 Rsquared_epi<-rbind(r.squaredGLMM(D7_1),r.squaredGLMM(D7_2),r.squaredGLMM(D7_3),r.squaredGLMM(D7_4))
 
 #add this to model summary output

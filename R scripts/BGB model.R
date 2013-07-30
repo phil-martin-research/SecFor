@@ -39,11 +39,6 @@ BGB$Ran<-as.factor(BGB$BGB_Ref)
 
 #Mixed model of relative BGB
 
-#null model
-M0<-lmer(Proploss2~(1|Ran)+(Age|Ran),data=BGB,REML=F)
-#set null deviance as equivalent to null model
-nuldev<--2*logLik(M0)[1]
-
 #saturated models with log and linear terms
 M1lin<-lmer(Proploss2~Age+I(Age^2)+Disturbance*Age+(1|Ran)+(Age|Ran),data=BGB,REML=F)
 M1log<-lmer(Proploss2~log(Age)+Disturbance*log(Age)+(1|Ran)+(Age|Ran),data=BGB,REML=F)
@@ -55,23 +50,27 @@ plot(predict(M1log),resid(M1log))
 
 #the log model is better
 #reset it using REML
-M1log<-lmer(Proploss2~log(Age)+Disturbance*log(Age)+(1|Ran)+(Age|Ran),data=BGB,REML=T)
-#model selection using AICc
+M1log<-lmer(Proploss2~log(Age)+Disturbance*log(Age)+(Age|Ran),data=BGB,REML=T)
 
+#model selection using AICc
 #run all possible models
 MS1<- dredge(M1log, trace = TRUE, rank = "AICc", REML = FALSE)
 
 #subset models with delta<7 (to remove implausible models)
-poss_mod<- get.models(MS1, subset =delta<7,REML=T)
+poss_mod<- get.models(MS1, subset =delta<7)
 modsumm <- model.sel(poss_mod, rank = "AICc")
 modsumm
 
-#calculate deviance of model
-modsumm$dev<--2*modsumm$logLik
+#calculate marginal r squared for 
+#each model using equation from Nakagawa et al  2013
+D7_1<-lmer(Proploss2~1+log(Age)+(Age|Ran),data=BGB,REML=F)
+D7_2<-lmer(Proploss2~1+log(Age)+Disturbance+(Age|Ran),data=BGB,REML=F)
+D7_3<-lmer(Proploss2~1+log(Age)+Disturbance+log(Age)*Disturbance+(Age|Ran),data=BGB,REML=F)
 
-#calculate deviance explained for each model
-modsumm$dev_ex<-((nuldev-modsumm$dev)/nuldev)
-modsumm$dev_ex
+Rsquared_epi<-rbind(r.squaredGLMM(D7_1),r.squaredGLMM(D7_2),r.squaredGLMM(D7_3))
+
+#add this to model summary output
+modsumm$MRsquared<-Rsquared_epi[,1]
 
 #output possible models
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
@@ -84,16 +83,20 @@ averaged
 averaged2<-averaged$avg.model
 averaged2
 
-write.csv(M1.results, "Multimodel inferences Belowground Biomass.csv") #save table
+write.csv(averaged2, "Multimodel inferences Belowground Biomass.csv") #save table
+
+#output importance values
+#add importance values to estimated
+importance<-data.frame(Variable=c("Intercept",labels(importance(modsumm))),Importance=c(1,as.vector(importance(modsumm))))
+importance
+write.csv(importance, "Importance-BGB.csv") #save table
 
 #create predictions based on model averaged parameters
-
-
 Age<-seq(0.5,82,.1)
 
-preds_shift<-averaged2[1]+(averaged2[2])+((averaged2[3]+averaged2[4])*log(Age))
+preds_shift<-averaged2[1]+(averaged2[2])+((averaged2[3]*log(Age)))
 preds_past<-averaged2[1]+(averaged2[3]*log(Age))
-SE_shift<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])+(averaged2[4,2])
+SE_shift<-averaged2[1,2]+(averaged2[2,2])+(averaged2[3,2])
 SE_past<-averaged2[1,2]+(averaged2[3,2])
 
 plot(BGB$Age,BGB$Prop,col=BGB$Disturbance)
