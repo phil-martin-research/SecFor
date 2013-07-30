@@ -95,16 +95,15 @@ setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publicati
 
 theme_set(theme_bw(base_size=12))
 windowsFonts(Times=windowsFont("TT Times New Roman"))
-a<-ggplot(All,aes(x=Age,y=plogis(Prediction)*2,colour=Disturbance))+geom_line(size=1.5)+geom_point(data=Combined,aes(x=Age,y=prop),shape=1,size=2)+facet_wrap(~Type,ncol=1)
-b<-a+opts(panel.grid.major = theme_line(colour =NA))+geom_line(data=All,aes(x=Age,y=plogis(Prediction+(1.96*SE))*2),lty=2)
-c<-b+geom_line(data=All,aes(x=Age,y=plogis(Prediction-(1.96*SE))*2),lty=2)
+a<-ggplot(All,aes(x=Age,y=plogis(Prediction)*2,colour=Disturbance))+geom_line(size=2)+geom_point(data=Combined,aes(x=Age,y=prop),shape=1,size=2)+facet_wrap(~Type,ncol=1)
+b<-a+opts(panel.grid.major = theme_line(colour =NA))+geom_line(data=All,aes(x=Age,y=plogis(Prediction+(1.96*SE))*2),lty=2,size=1)
+c<-b+geom_line(data=All,aes(x=Age,y=plogis(Prediction-(1.96*SE))*2),lty=2,size=1)
 c
 c<-c+coord_cartesian(xlim=c(0,85),ylim=c(0,2))+ylab("measure relative to primary forest")
 d<-c+xlab("time since last disturbance (years)")
-e<-d+geom_hline(y=1,lty=2)+ scale_colour_discrete(name = "Land use prior\nto regrowth")
+e<-d+geom_hline(y=1,lty=2,size=1)+ scale_colour_discrete(name = "Land use prior\nto regrowth")
 e+theme(text=element_text(family="Times"))
-ggsave(filename="Carbon_pools_colour.png",height=180,width=175,dpi=400,units="mm")
-
+ggsave(filename="Carbon_pools_colour.png",height=180,width=175,dpi=1200,units="mm")
 
 #plot black and white figure
 theme_set(theme_bw(base_size=12))
