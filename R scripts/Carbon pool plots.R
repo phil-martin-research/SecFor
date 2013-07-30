@@ -21,7 +21,7 @@ Soil_pred<-read.table("C:/Users/Phil/Documents/My Dropbox/Work/PhD/Publications,
 BGB_pred<-read.table("C:/Users/Phil/Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics/Model predictions - BGB.csv",header=T,sep=",")
 colnames(AGB_pred)
 colnames(BGB_pred)
-
+Soil_pred$Disturbance<-"All combined"
 #combine datasets
 All<-rbind(AGB_pred,BGB_pred,Soil_pred)
 head(All)
@@ -66,6 +66,7 @@ Soil_C$Type<-"Soil Carbon"
 AGB<-subset(AGB,select=c(Disturbance,Age,AGB_Ref,AGB_Sec,Type))
 BGB<-subset(BGB,select=c(Disturbance,Age,AGB_Ref,AGB_Sec,Type))
 Soil_C<-subset(Soil_C,select=c(Disturbance,Age,AGB_Ref,AGB_Sec,Type))
+Soil_C$Disturbance<-"All combined"
 head(AGB)
 head(BGB)
 head(Soil_C)
@@ -97,6 +98,7 @@ windowsFonts(Times=windowsFont("TT Times New Roman"))
 a<-ggplot(All,aes(x=Age,y=plogis(Prediction)*2,colour=Disturbance))+geom_line(size=1.5)+geom_point(data=Combined,aes(x=Age,y=prop),shape=1,size=2)+facet_wrap(~Type,ncol=1)
 b<-a+opts(panel.grid.major = theme_line(colour =NA))+geom_line(data=All,aes(x=Age,y=plogis(Prediction+(1.96*SE))*2),lty=2)
 c<-b+geom_line(data=All,aes(x=Age,y=plogis(Prediction-(1.96*SE))*2),lty=2)
+c
 c<-c+coord_cartesian(xlim=c(0,85),ylim=c(0,2))+ylab("measure relative to primary forest")
 d<-c+xlab("time since last disturbance (years)")
 e<-d+geom_hline(y=1,lty=2)+ scale_colour_discrete(name = "Land use prior\nto regrowth")

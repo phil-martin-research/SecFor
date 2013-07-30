@@ -112,6 +112,6 @@ plot(Soil_C$Age,plogis(Soil_C$proploss2)*2)
 lines(Age,plogis(preds)*2)
 
 #export model predictions for later use
-predictions<-data.frame(Age=Age,Prediction=preds,SE=comb$SE,Type="Soil Carbon")
+predictions<-data.frame(Age=Age,Prediction=preds,SE=SE,Type="Soil Carbon")
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
 write.csv(predictions, "Model predictions - Soil C.csv") #save table
