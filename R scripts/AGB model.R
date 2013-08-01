@@ -41,6 +41,7 @@ AGB$Prop<-(AGB$AGB_Sec)/(AGB$AGB_Ref)
 AGB$Proploss<-(AGB$AGB_Sec-AGB$AGB_Ref)/(AGB$AGB_Ref)
 AGB$Proploss2<-(qlogis((AGB$Proploss+ 1)/2))
 AGB$lnRR<-log((AGB$AGB_Sec))-log(AGB$AGB_Ref)
+AGB$SS<-ifelse(AGB$SS<0,1,AGB$SS)
 
 #change types
 levels(AGB$Type)[levels(AGB$Type)=="Tropical dry forest"] <- "Dry"
