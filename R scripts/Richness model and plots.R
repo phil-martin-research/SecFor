@@ -112,7 +112,6 @@ write.csv(modsumm, "Model - Richness.csv")
 #get parameter estimates for models with delta<7
 averaged<-model.avg(modsumm,subset=delta<7)
 averaged2<-averaged$avg.model
-averaged2<-data.frame(averaged2)
 
 #output parameter estimates
 setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Statistics")
@@ -150,7 +149,7 @@ Tree_preds<-data.frame(Age=Age_tree,preds=predstrees,SE=SE_tree,Tax="Trees")
 sec <- odbcConnect("Secondary/Degraded forests")
 sqlTables(sec)
 
-#import aboveground biomass query
+#import species richness query
 Rich<- sqlFetch(sec, "Species richness query")
 head(Rich)
 
@@ -212,7 +211,11 @@ M1log<-lmer(Proploss2~log(Age)+I(log(Age)^2)+(Age|Ran),data=Rich2,REML=F)
 
 #diagnostic plots
 plot(fitted(M1lin),M1lin@resid)
-plot(fitted(M1lin),Rich2$Proploss2,col=Rich3$Disturbance)
+plot(plogis(predict(M1lin))*2,plogis(Rich2$Proploss2)*2,col=Rich3$Disturbance)
+abline(a=0,b=1)
+qplot(plogis(fitted(M1log))*2,plogis(Rich2$Proploss2)*2)+geom_abline()+coord_cartesian(xlim=c(0,1.5),ylim=c(0,1.5))
+
+
 plot(Rich2$Age,Rich2$Proploss2,col=Rich3$Disturbance)
 AIC(M1lin,M1log)
 
@@ -232,6 +235,8 @@ modsumm<-subset(modsumm,delta<7)
 modsumm
 
 #this is a crap model, what happens with log terms?
+Rich2$logAge<-log(Rich2$Age)
+Rich2$logAgesq<-Rich2$logAge^2
 M1log<-lmer(Proploss2~logAge+logAgesq+(Age|Ran),data=Rich2,REML=F)
 MS1_log<- dredge(M1log, trace = TRUE, rank = "AICc", subset=dc(logAge,logAgesq),REML = F)
 
@@ -364,3 +369,51 @@ f+theme(text=element_text(family="Times"))
 setwd("C:/Users/Phil/Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Figures")
 ggsave(filename="Prop_richness.png",height=8,width=12,dpi=300)
 ggsave(filename="Prop_richness.jpeg",height=4,width=6,dpi=1200)
+
+#produce plots of models
+head(Rich)
+theme_set(theme_bw(base_size=12))
+windowsFonts(Times=windowsFont("TT Times New Roman"))
+a<-qplot(data=Rich,x=Age,y=Prop,geom="point",shape=I(1),colour=Tax,size=I(2),group=Tax)+geom_line(data=Comb,aes(x=Age,y=plogis(preds)*2),size=1.5)
+b<-a+facet_wrap(~Tax)
+c<-b
+d<-c+ylab("species richness proportional\nto reference forest")+xlab("time since last disturbance (years)")
+e<-d+theme(panel.grid.major = element_line(colour =NA))+scale_colour_discrete("Taxonomic group")
+f<-e+coord_cartesian(ylim=c(0,1.8),xlim=c(0,175))+geom_hline(y=1,lty=2)+theme(legend.position="none")
+f+theme(text=element_text(family="Times"))+scale_colour_manual(values=c("black","black"))
+f+theme(text=element_text(family="Times"))
+
+setwd("C:/Documents and Settings/Phil/My Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Figures")
+ggsave(filename="Richness_bw.png",height=87.5,width=175,dpi=1200,units="mm")
+ggsave(filename="Richness_colour.png",height=87.5,width=175,dpi=1200,units="mm")
+
+
+#produce plots of model for presentations - without epiphytes
+Rich$Tax2<-factor(Rich$Tax,c("Trees","Epiphytes"))
+Comb$Tax2<-factor(Comb$Tax,c("Trees","Epiphytes"))
+theme_set(theme_bw(base_size=30))
+a<-qplot(data=Rich,x=Age,y=Prop,geom="point",shape=I(1),colour=Tax,size=I(4),group=Tax2)+geom_line(data=Comb,aes(x=Age,y=plogis(preds)*2),size=2)
+b<-a
+c<-b+facet_wrap(~Tax2)
+c
+d<-c+ylab("Species richness relative\nto undisturbed forest")+xlab("Time since last disturbance (Years)")
+e<-d+theme(panel.grid.major = element_line(colour =NA),panel.grid.minor = element_line(colour =NA))+scale_colour_manual("Taxonomic group",values=c("NA","blue"))
+f<-e+coord_cartesian(ylim=c(0,1.8),xlim=c(0,180))+geom_hline(y=1,lty=2)+theme(legend.position="none")
+f
+setwd("C:/Users/Phil/Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Figures")
+ggsave(filename="Prop_richness_pres_1.jpeg",height=8,width=12,dpi=400)
+
+#produce plots of model for presentations - withepiphytes
+Rich$Tax2<-factor(Rich$Tax,c("Trees","Epiphytes"))
+Comb$Tax2<-factor(Comb$Tax,c("Trees","Epiphytes"))
+theme_set(theme_bw(base_size=30))
+a<-qplot(data=Rich,x=Age,y=Prop,geom="point",shape=I(1),colour=Tax,size=I(4),group=Tax2)+geom_line(data=Comb,aes(x=Age,y=plogis(preds)*2),size=2)
+b<-a
+c<-b+facet_wrap(~Tax2)
+c
+d<-c+ylab("Species richness relative\nto undisturbed forest")+xlab("Time since last disturbance (Years)")
+e<-d+theme(panel.grid.major = element_line(colour =NA),panel.grid.minor = element_line(colour =NA))+scale_colour_manual("Taxonomic group",values=c("red","blue"))
+f<-e+coord_cartesian(ylim=c(0,1.8),xlim=c(0,180))+geom_hline(y=1,lty=2)+theme(legend.position="none")
+f
+setwd("C:/Users/Phil/Documents/My Dropbox/Work/PhD/Publications, Reports and Responsibilities/Chapters/4. Forest restoration trajectories/Analysis/Figures")
+ggsave(filename="Prop_richness_pres_2.jpeg",height=8,width=12,dpi=400)
