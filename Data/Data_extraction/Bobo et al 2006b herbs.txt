@@ -1,0 +1,5 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Bobo et al 2006b herbs.jpg Wednesday 31-Oct-2012 10:26:48 AM
+4.098, 25.8191
+4.1467, 31.031
+12.4699, 41.5394
+12.5655, 46.4251

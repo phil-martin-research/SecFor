@@ -1,0 +1,75 @@
+PLACE,Soil type,Age,Growing_season,Season_temp,Season_precip,GSDY,Altitude,Disturbance,Biomass
+"Peixe Boi, Brazil",Sandy,5,243,26,2200,85,50,Agriculture,13.1
+"Peixe Boi, Brazil",Sandy,10,243,26,2200,170,50,Agriculture,43.9
+"Peixe Boi, Brazil",Sandy,20,243,26,2200,340,50,Agriculture,80.5
+"Peixe Boi, Brazil",Sandy,40,243,26,2200,679,50,Agriculture,103
+"Rio Negro, Venezuela",Sandy,9,365,26,3500,234,119,Agriculture,43.9
+"Rio Negro, Venezuela",Sandy,11,365,26,3500,286,119,Agriculture,52.9
+"Rio Negro, Venezuela",Sandy,12,365,26,3500,312,119,Agriculture,81.8
+"Rio Negro, Venezuela",Sandy,14,365,26,3500,364,119,Agriculture,53.4
+"Rio Negro, Venezuela",Sandy,20,365,26,3500,520,119,Agriculture,61.5
+"Rio Negro, Venezuela",Sandy,20,365,26,3500,520,119,Agriculture,63.8
+"Rio Negro, Venezuela",Sandy,20,365,26,3500,520,119,Agriculture,83.3
+"Rio Negro, Venezuela",Sandy,20,365,26,3500,520,119,Agriculture,97.6
+"Rio Negro, Venezuela",Sandy,30,365,26,3500,780,119,Agriculture,53.8
+"Rio Negro, Venezuela",Sandy,35,365,26,3500,910,119,Agriculture,108
+"Rio Negro, Venezuela",Sandy,35,365,26,3500,910,119,Agriculture,109
+"Rio Negro, Venezuela",Sandy,1,365,26,3500,26,119,Fire,0.5
+"Rio Negro, Venezuela",Sandy,2,365,26,3500,52,119,Fire,9.6
+"Rio Negro, Venezuela",Sandy,3,365,26,3500,78,119,Fire,17.2
+"Rio Negro, Venezuela",Sandy,4,365,26,3500,104,119,Fire,28.9
+"Rio Negro, Venezuela",Sandy,5,365,26,3500,130,119,Fire,40
+Belgian Congo,Sandy,2,304,25,1644,41,350k,Agriculture,10.9
+Belgian Congo,Sandy,5,304,25,1644,102,350k,Agriculture,76.7
+Belgian Congo,Sandy,8,304,25,1644,164,350k,Agriculture,121.7
+Belgian Congo,Sandy,18,304,25,1644,369,350k,Agriculture,121.1
+Thailand,Non-Sandy,4,215,21,1200,49,735,Agriculture,26.3
+Thailand,Non-Sandy,7,215,21,1200,87,735,Agriculture,27.7
+Thailand,Non-Sandy,10,215,21,1200,124,735,Agriculture,63.1
+Peru,Non-Sandy,3,243,23,1740,46,1100,Agriculture,37.5
+Peru,Non-Sandy,10,243,23,1740,153,1100,Agriculture,65
+Peru,Non-Sandy,10,243,23,1740,153,1100,Agriculture,115.8
+Peru,Non-Sandy,17,243,23,1740,260,1100,Agriculture,153.8
+Peru,Non-Sandy,27.5,243,23,1740,421,1100,Agriculture,161.3
+Peru,Non-Sandy,34.5,243,23,1740,528,1100,Agriculture,217.6
+"Paragominas, Brazil",Non-Sandy,2.5,182,26,1510,32,50 t,Pasture,7.6 
+"Paragominas, Brazil",Non-Sandy,2.5,182,26,1510,32,50 t,Pasture,15.5
+"Paragominas, Brazil",Non-Sandy,8,182,26,1510,102,50 t,Pasture,4.7
+"Paragominas, Brazil",Non-Sandy,1,182,26,1510,13,50 t,Pasture,5.8
+"Paragominas, Brazil",Non-Sandy,3.5,182,26,1510,45,50 t,Pasture,8.3
+"Paragominas, Brazil",Non-Sandy,3.5,182,26,1510,45,50 t,Pasture,16.8
+"Paragominas, Brazil",Non-Sandy,4,182,26,1510,51,50 t,Pasture,17
+"Paragominas, Brazil",Non-Sandy,7.5,182,26,1510,96,50 t,Pasture,37
+"Paragominas, Brazil",Non-Sandy,8,182,26,1510,102,50 t,Pasture,32.8
+"Paragominas, Brazil",Non-Sandy,3.5,182,26,1510,45,50 t,Pasture,29.4
+"Paragominas, Brazil",Non-Sandy,4.5,182,26,1510,57,50 t,Pasture,53.4
+"Paragominas, Brazil",Non-Sandy,8,182,26,1510,102,50 t,Pasture,86.1
+"Paragominas, Brazil",Non-Sandy,8,182,26,1510,102,50 t,Pasture,88.9
+India,Non-Sandy,1,184,28,1750,14,100,Agriculture,5
+India,Non-Sandy,5,184,28,1750,69,100,Agriculture,23.3
+India,Non-Sandy,10,184,28,1750,139,100,Agriculture,57.5
+India,Non-Sandy,15,184,28,1750,208,100,Agriculture,103.7
+India,Non-Sandy,20,184,28,1750,277,100,Agriculture,147.6
+Columbia,Non-Sandy,2,365,28,3152,55,100,Fire,19
+Columbia,Non-Sandy,5,365,28,3152,138,100,Fire,68
+Columbia,Non-Sandy,16,365,28,3152,440,100,Fire,203
+Guatemala,Non-Sandy,1,214,26,1605,15,55,Agriculture,7.8
+Guatemala,Non-Sandy,1,214,26,1605,15,55,Agriculture,10
+Guatemala,Non-Sandy,2,214,26,1605,31,55,Agriculture,14.2
+Guatemala,Non-Sandy,3,214,26,1605,46,55,Agriculture,22.9
+Guatemala,Non-Sandy,4,214,26,1605,61,55,Agriculture,26.4
+Guatemala,Non-Sandy,4,214,26,1605,61,55,Agriculture,27.4
+Guatemala,Non-Sandy,4,214,26,1605,61,55,Agriculture,28.2
+Guatemala,Non-Sandy,5,214,26,1605,77,55,Agriculture,29.8
+Guatemala,Non-Sandy,5,214,26,1605,77,55,Agriculture,38.9
+Guatemala,Non-Sandy,6,214,26,1605,92,55,Agriculture,42.7
+Guatemala,Non-Sandy,6,214,26,1605,92,55,Agriculture,50.1
+Guatemala,Non-Sandy,7,214,26,1605,107,55,Agriculture,46.7
+Guatemala,Non-Sandy,8,214,26,1605,122,55,Agriculture,65.9
+Guatemala,Non-Sandy,9,214,26,1605,138,55,Agriculture,72.4
+Guatemala,Non-Sandy,10,214,26,1605,153,55,Agriculture,54.1
+Panama,Non-Sandy,2,245,25,1725,34,50,Agriculture,13
+Panama,Non-Sandy,3,245,25,1725,50,50,Agriculture,24.4
+Panama,Non-Sandy,6,245,25,1725,101,50,Agriculture,38
+Mexico,Non-Sandy,0.83,243,24,3280,13,150,Fire,5.2
+Mexico,Non-Sandy,7,243,24,3280,112,150,Agriculture,43.5

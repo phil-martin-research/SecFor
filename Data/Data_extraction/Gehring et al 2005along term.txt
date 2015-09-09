@@ -1,0 +1,4 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Gehring et al 2005a.jpg Wednesday 21-Nov-2012 3:43:29 PM
+3.9563, 38.8876
+7.3309, 37.2053
+4.9454, 83.4803

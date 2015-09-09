@@ -1,0 +1,7 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Pena Claros et al 2002.jpg Wednesday 23-Jan-2013 12:23:31 PM
+2.7505, 36.4197
+4.7893, 39.4643
+9.6362, 53.3184
+10.5798, 53.5461
+24.2643, 56.0237
+58.7302, 53.8557

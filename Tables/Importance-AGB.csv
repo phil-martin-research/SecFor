@@ -1,0 +1,6 @@
+"","Variable","Importance"
+"1","Intercept",1
+"2","logAge",1
+"3","Disturbance",0.397532116337663
+"4","Disturbance:logAge",0.0524600355641977
+"5","Type",0.0289853245448867

@@ -1,0 +1,5 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Makana et al 2006a.jpg Wednesday 12-Dec-2012 12:44:55 PM
+0.0297, 89.0724
+0.0297, 86.4717
+0.0271, 53.2778
+0.0271, 53.2778

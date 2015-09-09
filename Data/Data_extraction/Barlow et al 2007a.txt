@@ -1,0 +1,5 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Barlow et al 2007a.jpg Tuesday 30-Oct-2012 3:23:38 PM
+21.5032, 10.6794
+21.4729, 11.1711
+40.1142, 8.3447
+40.031, 9.6968

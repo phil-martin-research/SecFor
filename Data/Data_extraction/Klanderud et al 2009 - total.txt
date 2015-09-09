@@ -1,0 +1,11 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Klanderud et al 2009.jpg Tuesday 4-Dec-2012 2:53:17 PM
+25.8336, 19.8
+26.3245, 22.4472
+78.0242, 17.3109
+77.6138, 19.4619
+129.391, 18.9584
+129.4271, 21.1094
+180.7981, 23.0051
+180.3835, 24.9079
+284.2511, 42.5977
+284.728, 44.4178

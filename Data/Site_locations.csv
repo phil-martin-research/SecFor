@@ -1,0 +1,644 @@
+Study,Site,Disturbance,Age,Type,Ref_Type,Ref_age,Country,Lat,Long
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011a,Pasture,0.25,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Cifuentes Jara 2008,Cifuentes Jara 2008l,Pasture,0.42,Tropical moist forest,Primary forest,-9999,Costa Rica,9.8586,-84.5241
+Cifuentes Jara 2008,Cifuentes Jara 2008at,Pasture,0.5,Tropical rainforest,Primary forest,-9999,Costa Rica,10.2811,-84.1483
+Hughes et al 1999,Hughes et al 1999a,Arable agriculture,0.5,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Williams-Linera et al 2010,Williams-Linera et al 2010a,Pasture,0.583333333,Tropical dry forest,Primary forest,-9999,Mexico,19.299155,-96.492577
+Williams-Linera et al 2010,Williams-Linera et al 2010b,Arable agriculture,0.67,Tropical dry forest,Primary forest,-9999,Mexico,19.299155,-96.492577
+Cifuentes Jara 2008,Cifuentes Jara 2008ai,Pasture,0.7,Tropical rainforest,Primary forest,-9999,Costa Rica,10.427,-84.095
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011b,Pasture,0.75,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988e,Pasture,1,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Cifuentes Jara 2008,Cifuentes Jara 2008aj,Pasture,1,Tropical rainforest,Primary forest,-9999,Costa Rica,8.4055,-83.3398
+Sommer et al 2000,Sommer et al 2000d,Shifting agriculture,1,NA,Primary forest,-9999,Brazil,-1.111609,-47.571539
+Kennard et al 2002,Kennard et al 2002a,Shifting agriculture,1,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Aweto et al 1981,Aweto et al 1981a,Shifting agriculture,1,Tropical moist forest,Primary forest,-9999,Nigeria,6.75,3.5
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008b,Shifting agriculture,1,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Raich et al 1983,Raich et al 1983a,Pasture,1,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.83333333
+Fujisaka et al 1997,Fujisaka et al 1997a,Shifting agriculture,1.5,Tropical rainforest,Primary forest,-9999,Brazil,-10.390572,-67.819427
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011c,Pasture,1.5,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Cifuentes Jara 2008,Cifuentes Jara 2008v,Pasture,2,Tropical rainforest,Primary forest,-9999,Costa Rica,9.7725,-84.6183
+Eaton et al 2009,Eaton et al 2009a,Arable agriculture,2,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Read et al 2003,Read et al 2003a,Shifting agriculture,2,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Kennard et al 2002,Kennard et al 2002b,Shifting agriculture,2,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Benavides et al 2006,Benavides et al 2006a,Shifting agriculture,2,Tropical rainforest,Primary forest,-9999,Brazil,-3,-69.5
+Alves et al 2003,Alves et al 2003a,Arable agriculture,2,Tropical rainforest,Primary forest,-9999,Brazil,-10.31666667,-62.76666667
+Gehring et al 2005,Gehring et al 2005a,Shifting agriculture,2,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Klanderaud et al 2009,Klanderaud et al 2009a,Shifting agriculture,2,Tropical rainforest,Primary forest,-9999,Madagascar,-18.9,48.46666667
+Pena Claros et al 2003,Pena Claros et al 2003f,Arable agriculture,2,Tropical moist forest,Primary forest,-9999,Bolivia,-11.75,-67.33333333
+Sierra et al 2007,Sierra et al 2007a,Pasture,2,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007b,Pasture,2,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007c,Pasture,2,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007d,Pasture,2,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007e,Pasture,2,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988k,Pasture,2.5,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988l,Pasture,2.5,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011d,Pasture,2.5,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Cifuentes Jara 2008,Cifuentes Jara 2008aa,Pasture,3,Tropical rainforest,Primary forest,-9999,Costa Rica,10.4214,-84.1618
+Cifuentes Jara 2008,Cifuentes Jara 2008ak,Pasture,3,Tropical rainforest,Primary forest,-9999,Costa Rica,10.4248,-84.0965
+Eaton et al 2009,Eaton et al 2009b,Arable agriculture,3,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009c,Arable agriculture,3,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Salimon et al 2004,Salimon et al 2004a,Plantation,3,Tropical moist forest,Primary forest,-9999,Brazil,-9.875305556,-67.07413889
+Salimon et al 2004,Salimon et al 2004c,Arable agriculture,3,Tropical moist forest,Primary forest,-9999,Brazil,-9.770805556,-67.65775
+Read et al 2003,Read et al 2003b,Shifting agriculture,3,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Read et al 2003,Read et al 2003k,Shifting agriculture,3,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Kennard et al 2002,Kennard et al 2002c,Shifting agriculture,3,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Benavides et al 2006,Benavides et al 2006B,Shifting agriculture,3,Tropical rainforest,Primary forest,-9998,Brazil,-3,-69.5
+Alves et al 2003,Alves et al 2003b,Arable agriculture,3,Tropical rainforest,Primary forest,-9999,Brazil,-10.31666667,-62.76666667
+Aweto et al 1981,Aweto et al 1981b,Shifting agriculture,3,Tropical moist forest,Primary forest,-9999,Nigeria,6.75,3.5
+Gehring et al 2005,Gehring et al 2005b,Shifting agriculture,3,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Gehring et al 2005,Gehring et al 2005c,Shifting agriculture,3,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Gehring et al 2005,Gehring et al 2005d,Shifting agriculture,3,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008c,Shifting agriculture,3,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Pena Claros et al 2003,Pena Claros et al 2003a,Arable agriculture,3,Tropical moist forest,Primary forest,-9999,Bolivia,-11.98333333,-65.71666667
+Williams-Linera et al 2010,Williams-Linera et al 2010c,Pasture,3,Tropical dry forest,Primary forest,-9999,Mexico,19.299155,-96.492577
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988a,Pasture,3.5,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988f,Pasture,3.5,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988g,Pasture,3.5,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Guggenberger et al 1999,Guggenberger et al 1999a,Shifting agriculture,3.5,Tropical rainforest,Primary forest,-9999,Costa Rica,10.67,-84.08
+Kammesheidt et al 1998,Kammesheidt et al 1998a,Shifting agriculture,3.5,NA,Primary forest,-9999,Paraguay,-24.10472222,-56.37611111
+Kotto-Same et al 1997,Kotto-Same et al 1997a,Shifting agriculture,4,Tropical moist forest,Primary forest,-9999,Cameroon,2.433,11.25
+Kotto-Same et al 1997,Kotto-Same et al 1997d,Shifting agriculture,4,Tropical moist forest,Primary forest,-9999,Cameroon,3.6,11.62
+Kotto-Same et al 1997,Kotto-Same et al 1997g,Shifting agriculture,4,Tropical moist forest,Primary forest,-9999,Cameroon,4.25,11.25
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988h,Pasture,4,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Eaton et al 2009,Eaton et al 2009d,Arable agriculture,4,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009e,Arable agriculture,4,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Hughes et al 1999,Hughes et al 1999b,Arable agriculture,4,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Templer et al 2004,Templer et al 2004b,Shifting agriculture,4,NA,Primary forest,-9999,Dominican Republic,19,-69.667
+Reiners et al 1994,Reiners et al 1994b,Pasture,4,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-84
+Read et al 2003,Read et al 2003c,Shifting agriculture,4,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Read et al 2003,Read et al 2003u,Shifting agriculture,4,Tropical dry forest,Primary forest,-9999,Mexico,17.88333333,-89.28333333
+Benavides et al 2006,Benavides et al 2006C,Shifting agriculture,4,Tropical rainforest,Primary forest,-9997,Brazil,-3,-69.5
+Drew et al 2004,Drew et al 2004a,Pasture,4,Tropical rainforest,Primary forest,-9999,Costa Rica,9.333333333,-83.85
+Fujisaka et al 1997,Fujisaka et al 1997b,Shifting agriculture,4,Tropical rainforest,Primary forest,-9999,Brazil,-10.390572,-67.819427
+Gehring et al 2005,Gehring et al 2005n,Shifting agriculture,4,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Pena Claros et al 2003,Pena Claros et al 2003g,Arable agriculture,4,Tropical moist forest,Primary forest,-9999,Bolivia,-11.75,-67.33333333
+Williams-Linera et al 2010,Williams-Linera et al 2010d,Pasture,4,Tropical dry forest,Primary forest,-9999,Mexico,19.299155,-96.492577
+Liebsch et al 2008,Liebsch et al 2008a,Shifting agriculture,4,Tropical rainforest,Primary forest,-9999,Brazil,-25.425912,-48.707886
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988b,Pasture,4.5,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Long et al 2012,Long et al 2012a,Shifting agriculture,4.5,Tropical rainforest,Primary forest,-9999,"China, People's Republic of",18.24,110
+Sommer et al 2000,Sommer et al 2000c,Shifting agriculture,5,NA,Primary forest,-9999,Brazil,-1.111609,-47.571539
+Eaton et al 2009,Eaton et al 2009f,Arable agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009g,Arable agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009h,Arable agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009i,Arable agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009j,Arable agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Read et al 2003,Read et al 2003d,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Read et al 2003,Read et al 2003l,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Read et al 2003,Read et al 2003m,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Read et al 2003,Read et al 2003v,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,17.88333333,-89.28333333
+Read et al 2003,Read et al 2003w,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,17.88333333,-89.28333333
+Kennard et al 2002,Kennard et al 2002d,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Becknell 2012,Becknell 2012A,Pasture,5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012B,Pasture,5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012C,Pasture,5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012D,Pasture,5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012E,Pasture,5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006D,Shifting agriculture,5,Tropical rainforest,Primary forest,-9996,Brazil,-3,-69.5
+Alves et al 2003,Alves et al 2003d,Arable agriculture,5,Tropical rainforest,Primary forest,-9999,Brazil,-10.31666667,-62.76666667
+Eaton et al 2006,Eaton et al 2006f,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Eaton et al 2006,Eaton et al 2006h,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Eaton et al 2006,Eaton et al 2006i,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Fujisaka et al 1997,Fujisaka et al 1997c,Shifting agriculture,5,Tropical rainforest,Primary forest,-9999,Brazil,-10.390572,-67.819427
+Gehring et al 2005,Gehring et al 2005e,Shifting agriculture,5,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008d,Shifting agriculture,5,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011e,Pasture,5,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Pena Claros et al 2003,Pena Claros et al 2003b,Arable agriculture,5,Tropical moist forest,Primary forest,-9999,Bolivia,-11.98333333,-65.71666667
+Becknell 2012,Becknell 2012F,Pasture,5.5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Klanderaud et al 2009,Klanderaud et al 2009b,Shifting agriculture,5.5,Tropical rainforest,Primary forest,-9999,Madagascar,-18.9,48.46666667
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011f,Pasture,5.5,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Cifuentes Jara 2008,Cifuentes Jara 2008w,Pasture,6,Tropical rainforest,Primary forest,-9999,Costa Rica,9.7761,-84.618
+Cifuentes Jara 2008,Cifuentes Jara 2008ab,Pasture,6,Tropical rainforest,Primary forest,-9999,Costa Rica,10.4315,-84.0205
+Eaton et al 2009,Eaton et al 2009k,Arable agriculture,6,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Templer et al 2004,Templer et al 2004a,Pasture,6,NA,Primary forest,-9999,Dominican Republic,19,-69.667
+Templer et al 2004,Templer et al 2004c,Pasture,6,NA,Primary forest,-9999,Dominican Republic,19,-69.667
+Read et al 2003,Read et al 2003n,Shifting agriculture,6,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Benavides et al 2006,Benavides et al 2006E,Shifting agriculture,6,Tropical rainforest,Primary forest,-9995,Brazil,-3,-69.5
+Eaton et al 2006,Eaton et al 2006g,Shifting agriculture,6,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Fernandes et al 1995,Fernandes et al 1995a,Pasture,6,Tropical rainforest,Primary forest,-9999,Costa Rica,18.81666667,-89.45
+Williams-Linera et al 2010,Williams-Linera et al 2010e,Pasture,6,Tropical dry forest,Primary forest,-9999,Mexico,19.299155,-96.492577
+Cifuentes Jara 2008,Cifuentes Jara 2008al,Pasture,6.5,Tropical rainforest,Primary forest,-9999,Costa Rica,8.4086,-83.3363
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011a,Pasture,6.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011b,Pasture,6.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011c,Pasture,6.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011d,Pasture,6.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011e,Pasture,6.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011f,Pasture,6.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011g,Pasture,6.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011h,Pasture,6.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Becknell 2012,Becknell 2012G,Pasture,6.5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012H,Pasture,6.5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Cifuentes Jara 2008,Cifuentes Jara 2008m,Pasture,7,Tropical moist forest,Primary forest,-9999,Costa Rica,9.7793,-84.9552
+Cifuentes Jara 2008,Cifuentes Jara 2008n,Pasture,7,Tropical moist forest,Primary forest,-9999,Costa Rica,9.8446,-84.5281
+Eaton et al 2009,Eaton et al 2009l,Arable agriculture,7,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Read et al 2003,Read et al 2003x,Shifting agriculture,7,Tropical dry forest,Primary forest,-9999,Mexico,17.88333333,-89.28333333
+Benavides et al 2006,Benavides et al 2006F,Shifting agriculture,7,Tropical rainforest,Primary forest,-9994,Brazil,-3,-69.5
+Aweto et al 1981,Aweto et al 1981c,Shifting agriculture,7,Tropical moist forest,Primary forest,-9999,Nigeria,6.75,3.5
+Eaton et al 2006,Eaton et al 2006j,Shifting agriculture,7,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Gehring et al 2005,Gehring et al 2005f,Shifting agriculture,7,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Gehring et al 2005,Gehring et al 2005o,Shifting agriculture,7,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008e,Shifting agriculture,7,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988i,Pasture,7.5,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Becknell 2012,Becknell 2012I,Pasture,7.5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012J,Pasture,7.5,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Werner 1984,Werner 1984b,Shifting agriculture,8,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988c,Pasture,8,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988d,Pasture,8,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988j,Pasture,8,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Uhl & Buschbacher 1988,Uhl & Buschbacher 1988m,Pasture,8,Tropical rainforest,Primary forest,-9999,Brazil,-2.99,-47.35
+Eaton et al 2009,Eaton et al 2009m,Arable agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009n,Arable agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009o,Arable agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009p,Arable agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Hughes et al 1999,Hughes et al 1999c,Arable agriculture,8,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Hughes et al 1999,Hughes et al 1999d,Arable agriculture,8,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Read et al 2003,Read et al 2003e,Shifting agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Read et al 2003,Read et al 2003f,Shifting agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Read et al 2003,Read et al 2003o,Shifting agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Read et al 2003,Read et al 2003y,Shifting agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,17.88333333,-89.28333333
+Kennard et al 2002,Kennard et al 2002e,Shifting agriculture,8,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Benavides et al 2006,Benavides et al 2006G,Shifting agriculture,8,Tropical rainforest,Primary forest,-9993,Brazil,-3,-69.5
+Jaramillo et al 2003,Jaramillo et al 2003a,Pasture,8,Tropical rainforest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Jaramillo et al 2003,Jaramillo et al 2003b,Pasture,8,Tropical rainforest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Jaramillo et al 2003,Jaramillo et al 2003c,Pasture,8,Tropical rainforest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Diekmann et al 2007,Diekmann et al 2007a,Shifting agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Diekmann et al 2007,Diekmann et al 2007b,Shifting agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Eaton et al 2006,Eaton et al 2006l,Shifting agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Eaton et al 2006,Eaton et al 2006m,Shifting agriculture,8,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Gehring et al 2005,Gehring et al 2005g,Shifting agriculture,8,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Kappelle et al 1995,Kappelle et al 1995a,Pasture,8,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011g,Pasture,8,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Sierra et al 2007,Sierra et al 2007f,Pasture,8,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Cifuentes Jara 2008,Cifuentes Jara 2008a,Pasture,9,Tropical dry forest,Primary forest,-9999,Costa Rica,10.8732,-85.5788
+Cifuentes Jara 2008,Cifuentes Jara 2008o,Pasture,9,Tropical moist forest,Primary forest,-9999,Costa Rica,9.7876,-84.9392
+Cifuentes Jara 2008,Cifuentes Jara 2008am,Pasture,9,Tropical rainforest,Primary forest,-9999,Costa Rica,10.4553,-84.0665
+Eaton et al 2009,Eaton et al 2009q,Arable agriculture,9,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Reiners et al 1994,Reiners et al 1994a,Pasture,9,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-84
+Reiners et al 1994,Reiners et al 1994c,Pasture,9,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-84
+Read et al 2003,Read et al 2003z,Shifting agriculture,9,Tropical dry forest,Primary forest,-9999,Mexico,17.88333333,-89.28333333
+Benavides et al 2006,Benavides et al 2006H,Shifting agriculture,9,Tropical rainforest,Primary forest,-9992,Brazil,-3,-69.5
+Eaton et al 2006,Eaton et al 2006k,Shifting agriculture,9,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011h,Pasture,9,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Saldarriaga et al 1988,Saldarriaga et al 1988a,Shifting agriculture,9,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Kotto-Same et al 1997,Kotto-Same et al 1997b,Shifting agriculture,10,Tropical moist forest,Primary forest,-9999,Cameroon,2.433,11.25
+Kotto-Same et al 1997,Kotto-Same et al 1997e,Shifting agriculture,10,Tropical moist forest,Primary forest,-9999,Cameroon,3.6,11.62
+Kotto-Same et al 1997,Kotto-Same et al 1997h,Shifting agriculture,10,Tropical moist forest,Primary forest,-9999,Cameroon,4.25,11.25
+Cifuentes Jara 2008,Cifuentes Jara 2008b,Pasture,10,Tropical dry forest,Primary forest,-9999,Costa Rica,10.8883,-85.6
+Cifuentes Jara 2008,Cifuentes Jara 2008c,Pasture,10,Tropical dry forest,Primary forest,-9999,Costa Rica,10.8889,-85.6004
+Cifuentes Jara 2008,Cifuentes Jara 2008x,Pasture,10,Tropical rainforest,Primary forest,-9999,Costa Rica,9.7792,-84.618
+Cifuentes Jara 2008,Cifuentes Jara 2008ac,Pasture,10,Tropical rainforest,Primary forest,-9999,Costa Rica,10.4556,-84.1763
+Cifuentes Jara 2008,Cifuentes Jara 2008au,Pasture,10,Tropical rainforest,Primary forest,-9999,Costa Rica,10.2822,-84.1502
+Eaton et al 2009,Eaton et al 2009r,Arable agriculture,10,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Hughes et al 1999,Hughes et al 1999e,Arable agriculture,10,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Johnson et al 2001,Johnson et al 2001a,Shifting agriculture,10,NA,Primary forest,-9999,Brazil,-1.2,-47.25833333
+Read et al 2003,Read et al 2003g,Shifting agriculture,10,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Kennard et al 2002,Kennard et al 2002f,Shifting agriculture,10,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Becknell 2012,Becknell 2012K,Pasture,10,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012L,Pasture,10,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012M,Pasture,10,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006I,Shifting agriculture,10,Tropical rainforest,Primary forest,-9991,Brazil,-3,-69.5
+Cascante Marin et al 2006,Cascante Marin et al 2006a,Pasture,10,Tropical moist forest,Primary forest,-9999,Costa Rica,10.28611111,-84.79444444
+Aweto et al 1981,Aweto et al 1981d,Shifting agriculture,10,Tropical moist forest,Primary forest,-9999,Nigeria,6.75,3.5
+Drew et al 2004,Drew et al 2004b,Pasture,10,Tropical rainforest,Primary forest,-9999,Costa Rica,9.333333333,-83.85
+Eaton et al 2006,Eaton et al 2006n,Shifting agriculture,10,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Gehring et al 2005,Gehring et al 2005h,Shifting agriculture,10,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Gehring et al 2005,Gehring et al 2005i,Shifting agriculture,10,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Kappelle et al 1993,Kappelle et al 1993a,Pasture,10,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Klanderaud et al 2009,Klanderaud et al 2009c,Shifting agriculture,10,Tropical rainforest,Primary forest,-9999,Madagascar,-18.9,48.46666667
+Köster et al 2009,Köster et al 2009a,Pasture,10,Tropical montane forest,Primary forest,-9999,Ecuador,-0.416666667,-79.01666667
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007a,Pasture,10,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Howorth et al 2006,Howorth et al 2006a,Shifting agriculture,10,Tropical montane forest,Primary forest,-9999,Venezuela,10.414631,-67.334948
+Kappelle et al 1995,Kappelle et al 1995b,Pasture,10,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Letcher et al 2009,Letcher et al 2009a,Pasture,10,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Letcher et al 2009,Letcher et al 2009b,Pasture,10,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Letcher et al 2009,Letcher et al 2009c,Pasture,10,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Pena Claros et al 2003,Pena Claros et al 2003c,Arable agriculture,10,Tropical moist forest,Primary forest,-9999,Bolivia,-11.98333333,-65.71666667
+Piotto et al 2009,Piotto et al 2009a,Shifting agriculture,10,Tropical moist forest,Primary forest,-9999,Brazil,-14.41666667,-39.08333333
+Sierra et al 2007,Sierra et al 2007g,Pasture,10,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007q,Pasture,10,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007w,Pasture,10,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007f,Pasture,10,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007g,Pasture,10,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Salimon et al 2004,Salimon et al 2004b,Pasture,11,Tropical moist forest,Primary forest,-9999,Brazil,-9.875694444,-67.07158333
+Becknell 2012,Becknell 2012N,Pasture,11,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006J,Shifting agriculture,11,Tropical rainforest,Primary forest,-9990,Brazil,-3,-69.5
+Alves et al 2003,Alves et al 2003f,Pasture,11,Tropical rainforest,Primary forest,-9999,Brazil,-10.31666667,-62.76666667
+Eaton et al 2006,Eaton et al 2006o,Shifting agriculture,11,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Letcher et al 2009,Letcher et al 2009d,Pasture,11,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Letcher et al 2009,Letcher et al 2009e,Pasture,11,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Pena Claros et al 2003,Pena Claros et al 2003d,Arable agriculture,11,Tropical moist forest,Primary forest,-9999,Bolivia,-11.98333333,-65.71666667
+Saldarriaga et al 1988,Saldarriaga et al 1988b,Shifting agriculture,11,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Sierra et al 2007,Sierra et al 2007h,Pasture,11,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007i,Pasture,11,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007j,Pasture,11,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007r,Pasture,11,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007x,Pasture,11,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007y,Pasture,11,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Grau et al 1997,Grau et al 1997a,Arable agriculture,11,Tropical montane forest,Primary forest,-9999,Argentina,-26.718627,-65.366936
+Chazdon et al 2009,Chazdon et al 2009a,Pasture,11,Tropical rainforest,Primary forest,-9999,Costa Rica,10.449367,-84.098926
+Chazdon et al 2009,Chazdon et al 2009b,Pasture,11,Tropical rainforest,Primary forest,-9999,Costa Rica,10.449367,-84.098926
+Chazdon et al 2009,Chazdon et al 2009e,Pasture,11,Tropical rainforest,Primary forest,-9999,Costa Rica,10.449367,-84.098926
+Chazdon et al 2009,Chazdon et al 2009f,Pasture,11,Tropical rainforest,Primary forest,-9999,Costa Rica,10.449367,-84.098926
+Reiners et al 1994,Reiners et al 1994e,Pasture,11.5,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-84
+Reiners et al 1994,Reiners et al 1994f,Pasture,11.5,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-84
+Sommer et al 2000,Sommer et al 2000b,Shifting agriculture,12,NA,Primary forest,-9999,Brazil,-1.111609,-47.571539
+Eaton et al 2009,Eaton et al 2009s,Arable agriculture,12,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009t,Arable agriculture,12,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009u,Arable agriculture,12,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Read et al 2003,Read et al 2003h,Shifting agriculture,12,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Read et al 2003,Read et al 2003i,Shifting agriculture,12,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Read et al 2003,Read et al 2003j,Shifting agriculture,12,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.38333333
+Becknell 2012,Becknell 2012O,Pasture,12,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012P,Pasture,12,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012Q,Pasture,12,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006K,Shifting agriculture,12,Tropical rainforest,Primary forest,-9989,Brazil,-3,-69.5
+Gehring et al 2005,Gehring et al 2005l,Shifting agriculture,12,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Laska et al 2006,Laska et al 2006a,Pasture,12,Tropical moist forest,Primary forest,-9999,Costa Rica,10.431936,-84.017185
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008f,Shifting agriculture,12,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Kappelle et al 1995,Kappelle et al 1995c,Pasture,12,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011i,Pasture,12,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Saldarriaga et al 1988,Saldarriaga et al 1988c,Shifting agriculture,12,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Sierra et al 2007,Sierra et al 2007k,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007l,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007m,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007o,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007s,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007t,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007u,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007z,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007aa,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007ae,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007ah,Pasture,12,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Guggenberger et al 1999,Guggenberger et al 1999b,Shifting agriculture,12.5,Tropical rainforest,Primary forest,-9999,Costa Rica,10.67,-84.08
+Saynes et al 2005,Saynes et al 2005a,Arable agriculture,12.5,Tropical dry forest,Primary forest,-9999,Mexico,18.46666667,-99.01666667
+Kammesheidt et al 1998,Kammesheidt et al 1998b,Shifting agriculture,12.5,NA,Primary forest,-9999,Paraguay,-24.10472222,-56.37611111
+Long et al 2012,Long et al 2012b,Shifting agriculture,12.5,Tropical rainforest,Primary forest,-9999,"China, People's Republic of",18.24,110
+Cifuentes Jara 2008,Cifuentes Jara 2008p,Pasture,13,Tropical moist forest,Primary forest,-9999,Costa Rica,9.8451,-84.5292
+Becknell 2012,Becknell 2012R,Pasture,13,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012S,Pasture,13,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006L,Shifting agriculture,13,Tropical rainforest,Primary forest,-9988,Brazil,-3,-69.5
+Eaton et al 2006,Eaton et al 2006p,Shifting agriculture,13,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Eaton et al 2006,Eaton et al 2006r,Shifting agriculture,13,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Sierra et al 2007,Sierra et al 2007n,Pasture,13,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007p,Pasture,13,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007ab,Pasture,13,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007ac,Pasture,13,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007ad,Pasture,13,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007al,Pasture,13,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011i,Pasture,13.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011j,Pasture,13.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011k,Pasture,13.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011l,Pasture,13.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011m,Pasture,13.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011n,Pasture,13.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011o,Pasture,13.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Neumann-Cosel et al 2011,Neumann-Cosel et al 2011p,Pasture,13.5,Tropical moist forest,Primary forest,-9999,Panama,9.203358,-79.716896
+Cifuentes Jara 2008,Cifuentes Jara 2008d,Pasture,14,Tropical dry forest,Primary forest,-9999,Costa Rica,10.847,-85.6143
+Benavides et al 2006,Benavides et al 2006M,Shifting agriculture,14,Tropical rainforest,Primary forest,-9987,Brazil,-3,-69.5
+Eaton et al 2006,Eaton et al 2006q,Shifting agriculture,14,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008g,Shifting agriculture,14,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Letcher et al 2009,Letcher et al 2009f,Pasture,14,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Pena Claros et al 2003,Pena Claros et al 2003h,Arable agriculture,14,Tropical moist forest,Primary forest,-9999,Bolivia,-11.75,-67.33333333
+Saldarriaga et al 1988,Saldarriaga et al 1988d,Shifting agriculture,14,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Sierra et al 2007,Sierra et al 2007v,Pasture,14,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Bautista Cruz et al 2005,Bautista Cruz et al 2005 b,Arable agriculture,15,Tropical dry forest,Primary forest,100,Mexico,17.31666667,-96.36666667
+Bautista Cruz et al 2005,Bautista Cruz et al 2005 f,Arable agriculture,15,Tropical dry forest,Primary forest,100,Mexico,17.31666667,-96.36666667
+Bautista Cruz et al 2005,Bautista Cruz et al 2005 j,Arable agriculture,15,Tropical dry forest,Primary forest,100,Mexico,17.31666667,-96.36666667
+Cifuentes Jara 2008,Cifuentes Jara 2008y,Pasture,15,Tropical rainforest,Primary forest,-9999,Costa Rica,9.7601,-84.6145
+Cifuentes Jara 2008,Cifuentes Jara 2008ad,Pasture,15,Tropical rainforest,Primary forest,-9999,Costa Rica,10.4319,-84.0218
+Cifuentes Jara 2008,Cifuentes Jara 2008av,Pasture,15,Tropical rainforest,Primary forest,-9999,Costa Rica,10.3019,-84.7408
+Eaton et al 2009,Eaton et al 2009v,Arable agriculture,15,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Reiners et al 1994,Reiners et al 1994d,Pasture,15,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-84
+Read et al 2003,Read et al 2003aa,Shifting agriculture,15,Tropical dry forest,Primary forest,-9999,Mexico,17.88333333,-89.28333333
+Kennard et al 2002,Kennard et al 2002g,Shifting agriculture,15,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Becknell 2012,Becknell 2012T,Pasture,15,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012U,Pasture,15,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012V,Pasture,15,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012W,Pasture,15,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012X,Pasture,15,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006N,Shifting agriculture,15,Tropical rainforest,Primary forest,-9986,Brazil,-3,-69.5
+Bobo et al 2006,Bobo et al 2006a,Shifting agriculture,15,Tropical rainforest,Primary forest,-9999,Cameroon,5.197629,9.08765
+Eaton et al 2006,Eaton et al 2006s,Shifting agriculture,15,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Eaton et al 2006,Eaton et al 2006t,Shifting agriculture,15,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Knight 1975,Knight 1975a,Pasture,15,Tropical rainforest,Primary forest,-9999,Panama,9.152604,-79.850032
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011k,Pasture,15,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Sierra et al 2007,Sierra et al 2007af,Pasture,15,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007ag,Pasture,15,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007ai,Pasture,15,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007am,Pasture,15,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Liebsch et al 2008,Liebsch et al 2008d,Shifting agriculture,15,Tropical rainforest,Primary forest,-9999,Brazil,-25.499066,-48.836975
+Liebsch et al 2008,Liebsch et al 2008f,Shifting agriculture,15,Tropical rainforest,Primary forest,-9999,Brazil,-25.012195,-47.938843
+Liebsch et al 2008,Liebsch et al 2008g,Shifting agriculture,15,Tropical rainforest,Primary forest,-9999,Brazil,-25.012195,-47.938843
+Werner 1984,Werner 1984c,Shifting agriculture,16,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Cifuentes Jara 2008,Cifuentes Jara 2008e,Pasture,16,Tropical dry forest,Primary forest,-9999,Costa Rica,10.8757,-85.5853
+Cifuentes Jara 2008,Cifuentes Jara 2008f,Pasture,16,Tropical dry forest,Primary forest,-9999,Costa Rica,10.8266,-85.6134
+Cifuentes Jara 2008,Cifuentes Jara 2008q,Pasture,16,Tropical moist forest,Primary forest,-9999,Costa Rica,9.8019,-84.9051
+de Camargo et al 1999,de Camargo et al 1999a,Pasture,16,NA,Primary forest,-9999,Brazil,-2.983333333,-47.51666667
+Guariguata et al 1997,Guariguata et al 1997b,Pasture,16,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-84
+Eaton et al 2009,Eaton et al 2009w,Arable agriculture,16,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Hughes et al 1999,Hughes et al 1999f,Arable agriculture,16,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Read et al 2003,Read et al 2003p,Shifting agriculture,16,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Benavides et al 2006,Benavides et al 2006O,Shifting agriculture,16,Tropical rainforest,Primary forest,-9985,Brazil,-3,-69.5
+Alves et al 2003,Alves et al 2003g,Pasture,16,Tropical rainforest,Primary forest,-9999,Brazil,-10.31666667,-62.76666667
+Eaton et al 2006,Eaton et al 2006u,Shifting agriculture,16,Tropical dry forest,Primary forest,-9999,Mexico,18.81666667,-89.45
+Letcher et al 2009,Letcher et al 2009g,Shifting agriculture,16,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Sierra et al 2007,Sierra et al 2007an,Pasture,16,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Castillo-Campos et al 2008,Castillo-Campos et al 2008a,Pasture,16,Tropical dry forest,Primary forest,-9999,Mexico,19.451701,-96.724062
+Guariguata et al 1997,Guariguata et al 1997a,Pasture,16.5,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-84
+Cifuentes Jara 2008,Cifuentes Jara 2008g,Pasture,17,Tropical dry forest,Primary forest,-9999,Costa Rica,10.8705,-85.5946
+Guariguata et al 1997,Guariguata et al 1997c,Pasture,17,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-84
+Becknell 2012,Becknell 2012Y,Pasture,17,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012Z,Pasture,17,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Barlow et al 2007,Barlow et al 2007a,Plantation,17,Tropical rainforest,Primary forest,-9999,Brazil,-0.45,-51.66666667
+Benavides et al 2006,Benavides et al 2006P,Shifting agriculture,17,Tropical rainforest,Primary forest,-9984,Brazil,-3,-69.5
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011l,Pasture,17,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Sierra et al 2007,Sierra et al 2007ak,Pasture,17,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Kotto-Same et al 1997,Kotto-Same et al 1997c,Shifting agriculture,17.4,Tropical moist forest,Primary forest,-9999,Cameroon,2.433,11.25
+Kotto-Same et al 1997,Kotto-Same et al 1997f,Shifting agriculture,17.4,Tropical moist forest,Primary forest,-9999,Cameroon,3.6,11.62
+Kotto-Same et al 1997,Kotto-Same et al 1997i,Shifting agriculture,17.4,Tropical moist forest,Primary forest,-9999,Cameroon,4.25,11.25
+Rhodes et al 2000,Rhodes et al 2000a,Pasture,17.5,Tropical montane forest,Primary forest,-9999,Ecuador,0.083333333,-78.61666667
+Cifuentes Jara 2008,Cifuentes Jara 2008an,Pasture,18,Tropical rainforest,Primary forest,-9999,Costa Rica,10.4025,-84.1125
+Eaton et al 2009,Eaton et al 2009x,Arable agriculture,18,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009y,Arable agriculture,18,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Read et al 2003,Read et al 2003q,Shifting agriculture,18,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Read et al 2003,Read et al 2003ab,Shifting agriculture,18,Tropical dry forest,Primary forest,-9999,Mexico,17.88333333,-89.28333333
+Becknell 2012,Becknell 2012AA,Pasture,18,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AB,Pasture,18,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006Q,Shifting agriculture,18,Tropical rainforest,Primary forest,-9983,Brazil,-3,-69.5
+Gehring et al 2005,Gehring et al 2005j,Shifting agriculture,18,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008h,Shifting agriculture,18,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Letcher et al 2009,Letcher et al 2009h,Pasture,18,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Letcher et al 2009,Letcher et al 2009i,Pasture,18,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Letcher et al 2009,Letcher et al 2009j,Pasture,18,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Guggenberger et al 1999,Guggenberger et al 1999c,Shifting agriculture,18.5,Tropical rainforest,Primary forest,-9999,Costa Rica,10.67,-84.08
+Cifuentes Jara 2008,Cifuentes Jara 2008aw,Pasture,19,Tropical rainforest,Primary forest,-9999,Costa Rica,10.297,-84.7515
+Becknell 2012,Becknell 2012AC,Pasture,19,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006R,Shifting agriculture,19,Tropical rainforest,Primary forest,-9982,Brazil,-3,-69.5
+Letcher et al 2009,Letcher et al 2009k,Pasture,19,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Letcher et al 2009,Letcher et al 2009l,Pasture,19,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Sierra et al 2007,Sierra et al 2007aj,Pasture,19,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Sierra et al 2007,Sierra et al 2007ao,Pasture,19,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Klanderaud et al 2009,Klanderaud et al 2009d,Shifting agriculture,19.5,Tropical rainforest,Primary forest,-9999,Madagascar,-18.9,48.46666667
+Cifuentes Jara 2008,Cifuentes Jara 2008r,Pasture,20,Tropical moist forest,Primary forest,-9999,Costa Rica,9.8397,-84.5478
+Cifuentes Jara 2008,Cifuentes Jara 2008ao,Pasture,20,Tropical rainforest,Primary forest,-9999,Costa Rica,8.4055,-83.3408
+Cifuentes Jara 2008,Cifuentes Jara 2008ax,Pasture,20,Tropical rainforest,Primary forest,-9999,Costa Rica,10.2865,-84.1761
+Cifuentes Jara 2008,Cifuentes Jara 2008ay,Pasture,20,Tropical rainforest,Primary forest,-9999,Costa Rica,10.2975,-84.7621
+Hughes et al 1999,Hughes et al 1999g,Arable agriculture,20,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Hughes et al 1999,Hughes et al 1999h,Arable agriculture,20,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Johnson et al 2001,Johnson et al 2001b,Shifting agriculture,20,NA,Primary forest,-9999,Brazil,-1.2,-47.25833333
+Kennard et al 2002,Kennard et al 2002h,Shifting agriculture,20,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Benavides et al 2006,Benavides et al 2006S,Shifting agriculture,20,Tropical rainforest,Primary forest,-9981,Brazil,-3,-69.5
+Drew et al 2004,Drew et al 2004c,Pasture,20,Tropical rainforest,Primary forest,-9999,Costa Rica,9.333333333,-83.85
+Gehring et al 2005,Gehring et al 2005k,Shifting agriculture,20,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Kappelle et al 1993,Kappelle et al 1993b,Pasture,20,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007b,Pasture,20,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Dewalt et al 2000,Dewalt et al 2000a,Pasture,20,Tropical rainforest,Primary forest,-9999,Panama,9.166666667,-79.85
+Dewalt et al 2000,Dewalt et al 2000b,Pasture,20,Tropical rainforest,Primary forest,-9999,Panama,9.166666667,-79.85
+Howorth et al 2006,Howorth et al 2006b,Shifting agriculture,20,Tropical montane forest,Primary forest,-9999,Venezuela,10.414631,-67.334948
+Kappelle et al 1995,Kappelle et al 1995d,Pasture,20,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Kappelle et al 1995,Kappelle et al 1995e,Pasture,20,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Saldarriaga et al 1988,Saldarriaga et al 1988e,Shifting agriculture,20,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Saldarriaga et al 1988,Saldarriaga et al 1988f,Shifting agriculture,20,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Saldarriaga et al 1988,Saldarriaga et al 1988g,Shifting agriculture,20,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Saldarriaga et al 1988,Saldarriaga et al 1988h,Shifting agriculture,20,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Sierra et al 2007,Sierra et al 2007ap,Pasture,20,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+DeWalt et al 2003,DeWalt et al 2003a,Arable agriculture,20,Tropical moist forest,Primary forest,-9999,Panama,9.150909,-79.849319
+DeWalt et al 2003,DeWalt et al 2003b,Arable agriculture,20,Tropical moist forest,Primary forest,-9999,Panama,9.150909,-79.849319
+Andel et al 2001,Andel et al 2001a,Pasture,20,Tropical moist forest,Primary forest,NA,Guyana,7.54221,-59.732666
+Liebsch et al 2008,Liebsch et al 2008b,Shifting agriculture,20,Tropical rainforest,Primary forest,-9999,Brazil,-25.425912,-48.707886
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007h,Pasture,20,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007i,Pasture,20,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Cifuentes Jara 2008,Cifuentes Jara 2008ae,Pasture,21,Tropical rainforest,Primary forest,-9999,Costa Rica,10.431,-84.0157
+Becknell 2012,Becknell 2012AD,Pasture,21,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AE,Pasture,21,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AF,Pasture,21,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006T,Shifting agriculture,21,Tropical rainforest,Primary forest,-9980,Brazil,-3,-69.5
+Letcher et al 2009,Letcher et al 2009m,Pasture,21,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Chazdon et al 2009,Chazdon et al 2009g,Pasture,21,Tropical rainforest,Primary forest,-9999,Costa Rica,10.453566,-84.003396
+Chazdon et al 2009,Chazdon et al 2009i,Pasture,21,Tropical rainforest,Primary forest,-9999,Costa Rica,10.453566,-84.003396
+Cifuentes Jara 2008,Cifuentes Jara 2008h,Pasture,22,Tropical dry forest,Primary forest,-9999,Costa Rica,10.8533,-85.6081
+Cifuentes Jara 2008,Cifuentes Jara 2008z,Pasture,22,Tropical rainforest,Primary forest,-9999,Costa Rica,9.7713,-84.614
+Benavides et al 2006,Benavides et al 2006U,Shifting agriculture,22,Tropical rainforest,Primary forest,-9979,Brazil,-3,-69.5
+Grau et al 1997,Grau et al 1997b,Arable agriculture,22.5,Tropical montane forest,Primary forest,-9999,Argentina,-26.718627,-65.366936
+Kennard et al 2002,Kennard et al 2002i,Shifting agriculture,23,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Becknell 2012,Becknell 2012AG,Pasture,23,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AH,Pasture,23,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AI,Pasture,23,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006V,Shifting agriculture,23,Tropical rainforest,Primary forest,-9978,Brazil,-3,-69.5
+Letcher et al 2009,Letcher et al 2009n,Pasture,23,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011m,Pasture,23,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Sierra et al 2007,Sierra et al 2007aq,Pasture,23,Tropical moist forest,Primary forest,-9999,Colombia,6.760277778,-75.10777778
+Eaton et al 2009,Eaton et al 2009z,Arable agriculture,24,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Read et al 2003,Read et al 2003r,Shifting agriculture,24,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Benavides et al 2006,Benavides et al 2006W,Shifting agriculture,24,Tropical rainforest,Primary forest,-9977,Brazil,-3,-69.5
+Köster et al 2009,Köster et al 2009b,Pasture,24,Tropical montane forest,Primary forest,-9999,Ecuador,-0.416666667,-79.01666667
+Letcher et al 2009,Letcher et al 2009o,Pasture,24,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Letcher et al 2009,Letcher et al 2009p,Pasture,24,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Pena Claros et al 2003,Pena Claros et al 2003e,Arable agriculture,24,Tropical moist forest,Primary forest,-9999,Bolivia,-11.98333333,-65.71666667
+Pena Claros et al 2003,Pena Claros et al 2003i,Arable agriculture,24,Tropical moist forest,Primary forest,-9999,Bolivia,-11.75,-67.33333333
+Chazdon et al 2009,Chazdon et al 2009c,Pasture,24,Tropical rainforest,Primary forest,-9999,Costa Rica,10.449367,-84.098926
+Cifuentes Jara 2008,Cifuentes Jara 2008ap,Pasture,25,Tropical rainforest,Primary forest,-9999,Costa Rica,10.506,-84.1327
+Eaton et al 2009,Eaton et al 2009aa,Arable agriculture,25,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Eaton et al 2009,Eaton et al 2009ab,Arable agriculture,25,Tropical dry forest,Primary forest,-9999,Mexico,18.42229,-89.391083
+Saynes et al 2005,Saynes et al 2005b,Arable agriculture,25,Tropical dry forest,Primary forest,-9999,Mexico,18.46666667,-99.01666667
+Álvarez-Yépiz et al 2008,Álvarez-Yépiz et al 2008a,Arable agriculture,25,Tropical dry forest,Primary forest,-9999,Mexico,27.002549,-108.90269
+Álvarez-Yépiz et al 2008,Álvarez-Yépiz et al 2008b,Arable agriculture,25,Tropical dry forest,Primary forest,-9999,Mexico,27.002549,-108.90269
+Álvarez-Yépiz et al 2008,Álvarez-Yépiz et al 2008c,Arable agriculture,25,Tropical dry forest,Primary forest,-9999,Mexico,27.002549,-108.90269
+Read et al 2003,Read et al 2003s,Shifting agriculture,25,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Read et al 2003,Read et al 2003t,Shifting agriculture,25,Tropical dry forest,Primary forest,-9999,Mexico,18.45,-88.93333333
+Becknell 2012,Becknell 2012AJ,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AK,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AL,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AM,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AN,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AO,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AP,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AQ,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AR,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AS,Pasture,25,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006X,Shifting agriculture,25,Tropical rainforest,Primary forest,-9976,Brazil,-3,-69.5
+Gehring et al 2005,Gehring et al 2005m,Shifting agriculture,25,Tropical moist forest,Primary forest,-9999,Brazil,-3,-60
+Laska et al 2006,Laska et al 2006b,Pasture,25,Tropical moist forest,Primary forest,-9999,Costa Rica,10.431936,-84.017185
+Kappelle et al 1995,Kappelle et al 1995f,Pasture,25,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Letcher et al 2009,Letcher et al 2009q,Pasture,25,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Nadkarni et al 2004,Nadkarni et al 2004a,Pasture,25,Tropical montane forest,Primary forest,-9999,Costa Rica,10.3,-84.8
+Piotto et al 2009,Piotto et al 2009b,Shifting agriculture,25,Tropical moist forest,Primary forest,-9999,Brazil,-14.41666667,-39.08333333
+Liebsch et al 2008,Liebsch et al 2008e,Shifting agriculture,25,Tropical rainforest,Primary forest,-9999,Brazil,-25.499066,-48.836975
+Liebsch et al 2008,Liebsch et al 2008h,Shifting agriculture,25,Tropical rainforest,Primary forest,-9999,Brazil,-25.012195,-47.938843
+Cifuentes Jara 2008,Cifuentes Jara 2008i,Pasture,26,Tropical dry forest,Primary forest,-9999,Costa Rica,10.7992,-85.6485
+Cifuentes Jara 2008,Cifuentes Jara 2008af,Pasture,26,Tropical rainforest,Primary forest,-9999,Costa Rica,10.3948,-83.9868
+Hughes et al 1999,Hughes et al 1999i,Arable agriculture,26,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Benavides et al 2006,Benavides et al 2006Y,Shifting agriculture,26,Tropical rainforest,Primary forest,-9975,Brazil,-3,-69.5
+Cifuentes Jara 2008,Cifuentes Jara 2008j,Pasture,27,Tropical dry forest,Primary forest,-9999,Costa Rica,10.8393,-85.6152
+Cifuentes Jara 2008,Cifuentes Jara 2008ag,Pasture,27,Tropical rainforest,Primary forest,-9999,Costa Rica,10.4165,-84.0029
+Benavides et al 2006,Benavides et al 2006Z,Shifting agriculture,27,Tropical rainforest,Primary forest,-9974,Brazil,-3,-69.5
+Letcher et al 2009,Letcher et al 2009r,Pasture,27,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Pena Claros et al 2003,Pena Claros et al 2003j,Arable agriculture,27,Tropical moist forest,Primary forest,-9999,Bolivia,-11.75,-67.33333333
+Cifuentes Jara 2008,Cifuentes Jara 2008s,Pasture,28,Tropical moist forest,Primary forest,-9999,Costa Rica,9.7908,-84.9244
+Benavides et al 2006,Benavides et al 2006AA,Shifting agriculture,28,Tropical rainforest,Primary forest,-9973,Brazil,-3,-69.5
+Cifuentes Jara 2008,Cifuentes Jara 2008aq,Pasture,29,Tropical rainforest,Primary forest,-9999,Costa Rica,10.3888,-84.1327
+Benavides et al 2006,Benavides et al 2006AB,Shifting agriculture,29,Tropical rainforest,Primary forest,-9972,Brazil,-3,-69.5
+Chazdon et al 2009,Chazdon et al 2009h,Pasture,29,Tropical rainforest,Primary forest,-9999,Costa Rica,10.453566,-84.003396
+Chazdon et al 2009,Chazdon et al 2009j,Pasture,29,Tropical rainforest,Primary forest,-9999,Costa Rica,10.453566,-84.003396
+Cifuentes Jara 2008,Cifuentes Jara 2008t,Pasture,30,Tropical moist forest,Primary forest,-9999,Costa Rica,9.7855,-84.9498
+Cifuentes Jara 2008,Cifuentes Jara 2008az,Pasture,30,Tropical rainforest,Primary forest,-9999,Costa Rica,10.2989,-84.7665
+Hughes et al 1999,Hughes et al 1999j,Arable agriculture,30,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Kennard et al 2002,Kennard et al 2002j,Shifting agriculture,30,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Becknell 2012,Becknell 2012AT,Pasture,30,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AU,Pasture,30,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AV,Pasture,30,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006AC,Shifting agriculture,30,Tropical rainforest,Primary forest,-9971,Brazil,-3,-69.5
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007c,Pasture,30,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Kappelle et al 1995,Kappelle et al 1995g,Pasture,30,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Kappelle et al 1995,Kappelle et al 1995h,Pasture,30,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Saldarriaga et al 1988,Saldarriaga et al 1988i,Shifting agriculture,30,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007j,Pasture,30,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007k,Pasture,30,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Werner 1984,Werner 1984d,Shifting agriculture,31,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Benavides et al 2006,Benavides et al 2006AD,Shifting agriculture,31,Tropical rainforest,Primary forest,-9970,Brazil,-3,-69.5
+Cifuentes Jara 2008,Cifuentes Jara 2008ah,Pasture,32,Tropical rainforest,Primary forest,-9999,Costa Rica,10.417,-84.0036
+Benavides et al 2006,Benavides et al 2006AE,Shifting agriculture,32,Tropical rainforest,Primary forest,-9969,Brazil,-3,-69.5
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008i,Shifting agriculture,32,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Kappelle et al 1995,Kappelle et al 1995i,Pasture,32,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Letcher et al 2009,Letcher et al 2009s,Pasture,32,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Kappelle et al 1993,Kappelle et al 1993c,Pasture,32.5,Tropical montane forest,Primary forest,-9999,Costa Rica,9.594444444,-83.74166667
+Becknell 2012,Becknell 2012AW,Pasture,33,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006AF,Shifting agriculture,33,Tropical rainforest,Primary forest,-9968,Brazil,-3,-69.5
+Chazdon et al 2009,Chazdon et al 2009d,Pasture,33,Tropical rainforest,Primary forest,-9999,Costa Rica,10.449367,-84.098926
+Benavides et al 2006,Benavides et al 2006AG,Shifting agriculture,34,Tropical rainforest,Primary forest,-9967,Brazil,-3,-69.5
+Letcher et al 2009,Letcher et al 2009t,Pasture,34,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Cifuentes Jara 2008,Cifuentes Jara 2008ar,Pasture,35,Tropical rainforest,Primary forest,-9999,Costa Rica,8.4053,-83.3372
+Cifuentes Jara 2008,Cifuentes Jara 2008ba,Pasture,35,Tropical rainforest,Primary forest,-9999,Costa Rica,10.2844,-84.1757
+Becknell 2012,Becknell 2012AX,Pasture,35,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AY,Pasture,35,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012AZ,Pasture,35,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BA,Pasture,35,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BB,Pasture,35,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BC,Pasture,35,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BD,Pasture,35,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006AH,Shifting agriculture,35,Tropical rainforest,Primary forest,-9966,Brazil,-3,-69.5
+Howorth et al 2006,Howorth et al 2006c,Shifting agriculture,35,Tropical montane forest,Primary forest,-9999,Venezuela,10.414631,-67.334948
+Letcher et al 2009,Letcher et al 2009u,Pasture,35,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011n,Pasture,35,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Saldarriaga et al 1988,Saldarriaga et al 1988j,Shifting agriculture,35,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Saldarriaga et al 1988,Saldarriaga et al 1988k,Shifting agriculture,35,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Woods et al 2012,Woods et al 2012a,Pasture,35,Tropical moist forest,Primary forest,-9999,Panama,9.15,-79.85
+Woods et al 2012,Woods et al 2012b,Pasture,35,Tropical moist forest,Primary forest,-9999,Panama,9.15,-79.85
+Benavides et al 2006,Benavides et al 2006AI,Shifting agriculture,36,Tropical rainforest,Primary forest,-9965,Brazil,-3,-69.5
+Liebsch et al 2008,Liebsch et al 2008i,Shifting agriculture,36,Tropical rainforest,Primary forest,-9999,Brazil,-25.012195,-47.938843
+Becknell 2012,Becknell 2012BE,Pasture,37,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BF,Pasture,37,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006AJ,Shifting agriculture,37,Tropical rainforest,Primary forest,-9964,Brazil,-3,-69.5
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008j,Shifting agriculture,37,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Cascante Marin et al 2006,Cascante Marin et al 2006b,Pasture,37.5,Tropical moist forest,Primary forest,-9999,Costa Rica,10.28611111,-84.79444444
+Benavides et al 2006,Benavides et al 2006AK,Shifting agriculture,38,Tropical rainforest,Primary forest,-9963,Brazil,-3,-69.5
+Gunther et al 2006,Gunther et al 2006a,Pasture,38,Tropical montane forest,Primary forest,-9999,Ecuador,-3.966666667,-79.06666667
+Benavides et al 2006,Benavides et al 2006AL,Shifting agriculture,39,Tropical rainforest,Primary forest,-9962,Brazil,-3,-69.5
+Cifuentes Jara 2008,Cifuentes Jara 2008u,Pasture,40,Tropical moist forest,Primary forest,-9999,Costa Rica,9.8401,-84.5403
+Cifuentes Jara 2008,Cifuentes Jara 2008bb,Pasture,40,Tropical rainforest,Primary forest,-9999,Costa Rica,10.2981,-84.7684
+Sommer et al 2000,Sommer et al 2000a,Shifting agriculture,40,NA,Primary forest,-9999,Brazil,-1.111609,-47.571539
+Johnson et al 2001,Johnson et al 2001c,Shifting agriculture,40,NA,Primary forest,-9999,Brazil,-1.2,-47.25833333
+Kennard et al 2002,Kennard et al 2002k,Shifting agriculture,40,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Becknell 2012,Becknell 2012BG,Pasture,40,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BH,Pasture,40,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BI,Pasture,40,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BJ,Pasture,40,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BK,Pasture,40,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006AM,Shifting agriculture,40,Tropical rainforest,Primary forest,-9961,Brazil,-3,-69.5
+Lebrija-Trejos et al 2008,Lebrija-Trejos et al 2008k,Shifting agriculture,40,Tropical dry forest,Primary forest,-9999,Mexico,16.65833333,-95.01111111
+Dewalt et al 2000,Dewalt et al 2000c,Pasture,40,Tropical rainforest,Primary forest,-9999,Panama,9.166666667,-79.85
+Dewalt et al 2000,Dewalt et al 2000d,Pasture,40,Tropical rainforest,Primary forest,-9999,Panama,9.166666667,-79.85
+Dewalt et al 2000,Dewalt et al 2000g,Pasture,40,Tropical rainforest,Primary forest,-9999,Panama,9.166666667,-79.85
+Dewalt et al 2000,Dewalt et al 2000h,Pasture,40,Tropical rainforest,Primary forest,-9999,Panama,9.166666667,-79.85
+Martin et al 2002,Martin et al 2002a,Arable agriculture,40,Tropical rainforest,Primary forest,-9999,Dominican Republic,19.255405,-71.096649
+Pena Claros et al 2003,Pena Claros et al 2003k,Arable agriculture,40,Tropical moist forest,Primary forest,-9999,Bolivia,-11.75,-67.33333333
+Piotto et al 2009,Piotto et al 2009c,Shifting agriculture,40,Tropical moist forest,Primary forest,-9999,Brazil,-14.41666667,-39.08333333
+Saldarriaga et al 1988,Saldarriaga et al 1988l,Shifting agriculture,40,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+DeWalt et al 2003,DeWalt et al 2003c,Arable agriculture,40,Tropical moist forest,Primary forest,-9999,Panama,9.150909,-79.849319
+DeWalt et al 2003,DeWalt et al 2003d,Arable agriculture,40,Tropical moist forest,Primary forest,-9999,Panama,9.150909,-79.849319
+Ferreira et al 1999,Ferreira et al 1999a,Shifting agriculture,40,Tropical rainforest,Primary forest,NA,Brazil,-1.927737,-60.743408
+Ferreira et al 1999,Ferreira et al 1999b,Shifting agriculture,40,Tropical rainforest,Primary forest,NA,Brazil,-1.927737,-60.743408
+Ferreira et al 1999,Ferreira et al 1999c,Shifting agriculture,40,Tropical rainforest,Primary forest,NA,Brazil,-1.927737,-60.743408
+Benavides et al 2006,Benavides et al 2006AN,Shifting agriculture,41,Tropical rainforest,Primary forest,-9960,Brazil,-3,-69.5
+Benavides et al 2006,Benavides et al 2006AO,Shifting agriculture,42,Tropical rainforest,Primary forest,-9959,Brazil,-3,-69.5
+Letcher et al 2009,Letcher et al 2009v,Pasture,42,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Benavides et al 2006,Benavides et al 2006AP,Shifting agriculture,43,Tropical rainforest,Primary forest,-9958,Brazil,-3,-69.5
+Benavides et al 2006,Benavides et al 2006AQ,Shifting agriculture,44,Tropical rainforest,Primary forest,-9957,Brazil,-3,-69.5
+Letcher et al 2009,Letcher et al 2009w,Pasture,44,Tropical rainforest,Primary forest,-9999,Costa Rica,10.43333333,-83.98333333
+Bautista Cruz et al 2005,Bautista Cruz et al 2005 c,Arable agriculture,45,Tropical dry forest,Primary forest,100,Mexico,17.31666667,-96.36666667
+Bautista Cruz et al 2005,Bautista Cruz et al 2005 g,Arable agriculture,45,Tropical dry forest,Primary forest,100,Mexico,17.31666667,-96.36666667
+Bautista Cruz et al 2005,Bautista Cruz et al 2005 k,Arable agriculture,45,Tropical dry forest,Primary forest,100,Mexico,17.31666667,-96.36666667
+Becknell 2012,Becknell 2012BL,Pasture,45,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BM,Pasture,45,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BN,Pasture,45,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Benavides et al 2006,Benavides et al 2006AR,Shifting agriculture,45,Tropical rainforest,Primary forest,-9956,Brazil,-3,-69.5
+Benavides et al 2006,Benavides et al 2006AS,Shifting agriculture,46,Tropical rainforest,Primary forest,-9955,Brazil,-3,-69.5
+Benavides et al 2006,Benavides et al 2006AT,Shifting agriculture,47,Tropical rainforest,Primary forest,-9954,Brazil,-3,-69.5
+Grau et al 1997,Grau et al 1997c,Arable agriculture,47.5,Tropical montane forest,Primary forest,-9999,Argentina,-26.718627,-65.366936
+Grau et al 1997,Grau et al 1997d,Arable agriculture,47.5,Tropical montane forest,Primary forest,-9999,Argentina,-26.718627,-65.366936
+Cifuentes Jara 2008,Cifuentes Jara 2008bc,Pasture,50,Tropical rainforest,Primary forest,-9999,Costa Rica,10.2652,-84.1565
+Hughes et al 1999,Hughes et al 1999k,Arable agriculture,50,Tropical moist forest,Primary forest,-9999,Mexico,18.58333333,-95.08333333
+Kennard et al 2002,Kennard et al 2002l,Shifting agriculture,50,Tropical dry forest,Primary forest,-9999,Bolivia,-16.75,-61.75
+Becknell 2012,Becknell 2012BO,Pasture,50,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BP,Pasture,50,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BQ,Pasture,50,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BR,Pasture,50,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Knight 1975,Knight 1975b,Pasture,50,Tropical rainforest,Primary forest,-9999,Panama,9.152604,-79.850032
+Knight 1975,Knight 1975g,Pasture,50,Tropical rainforest,Primary forest,-9999,Panama,9.152604,-79.850032
+Long et al 2012,Long et al 2012c,Shifting agriculture,50,Tropical rainforest,Primary forest,-9999,"China, People's Republic of",18.24,110
+Liebsch et al 2008,Liebsch et al 2008j,Shifting agriculture,50,Tropical rainforest,Primary forest,-9999,Brazil,-25.012195,-47.938843
+Brearley et al 2004,Brearley et al 2004a,Shifting agriculture,55,Tropical rainforest,Primary forest,-9999,Indonesia,-0.1,114
+Ding et al 2012,Ding et al 2012a,Shifting agriculture,55,Tropical rainforest,Primary forest,-9999,"China, People's Republic of",19.175653,109.263153
+Ding et al 2012,Ding et al 2012c,Shifting agriculture,55,Tropical montane forest,Primary forest,-9999,"China, People's Republic of",19.175653,109.263153
+Woods et al 2012,Woods et al 2012c,Pasture,55,Tropical moist forest,Primary forest,-9999,Panama,9.15,-79.85
+Woods et al 2012,Woods et al 2012d,Pasture,55,Tropical moist forest,Primary forest,-9999,Panama,9.15,-79.85
+Cifuentes Jara 2008,Cifuentes Jara 2008as,Pasture,60,Tropical rainforest,Primary forest,-9999,Costa Rica,8.3961,-83.3374
+Saynes et al 2005,Saynes et al 2005c,Arable agriculture,60,Tropical dry forest,Primary forest,-9999,Mexico,18.46666667,-99.01666667
+Becknell 2012,Becknell 2012BS,Pasture,60,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BT,Pasture,60,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BU,Pasture,60,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BV,Pasture,60,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Lorenz et al 2009,Lorenz et al 2009b,Pasture,60,Tropical dry forest,Primary forest,-9999,Costa Rica,10.81472222,-85.615
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007d,Pasture,60,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Saldarriaga et al 1988,Saldarriaga et al 1988m,Shifting agriculture,60,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Saldarriaga et al 1988,Saldarriaga et al 1988n,Shifting agriculture,60,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Saldarriaga et al 1988,Saldarriaga et al 1988o,Shifting agriculture,60,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Andel et al 2001,Andel et al 2001b,Pasture,60,Tropical moist forest,Primary forest,NA,Guyana,7.632309,-58.899593
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007l,Pasture,60,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007m,Pasture,60,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Becknell 2012,Becknell 2012BW,Pasture,65,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BX,Pasture,65,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012BY,Pasture,65,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Knight 1975,Knight 1975c,Pasture,65,Tropical rainforest,Primary forest,-9999,Panama,9.152604,-79.850032
+Knight 1975,Knight 1975d,Pasture,65,Tropical rainforest,Primary forest,-9999,Panama,9.152604,-79.850032
+Knight 1975,Knight 1975f,Pasture,65,Tropical rainforest,Primary forest,-9999,Panama,9.152604,-79.850032
+Knight 1975,Knight 1975h,Pasture,65,Tropical rainforest,Primary forest,-9999,Panama,9.152604,-79.850032
+Becknell 2012,Becknell 2012BZ,Pasture,70,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012CA,Pasture,70,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Becknell 2012,Becknell 2012CB,Pasture,70,Tropical dry forest,Primary forest,-9999,Costa Rica,10.865676,-85.72673
+Dewalt et al 2000,Dewalt et al 2000e,Pasture,70,Tropical rainforest,Primary forest,-9999,Panama,9.166666667,-79.85
+Dewalt et al 2000,Dewalt et al 2000f,Pasture,70,Tropical rainforest,Primary forest,-9999,Panama,9.166666667,-79.85
+DeWalt et al 2003,DeWalt et al 2003e,Arable agriculture,70,Tropical moist forest,Primary forest,-9999,Panama,9.150909,-79.849319
+DeWalt et al 2003,DeWalt et al 2003f,Arable agriculture,70,Tropical moist forest,Primary forest,-9999,Panama,9.150909,-79.849319
+Bautista Cruz et al 2005,Bautista Cruz et al 2005 d,Arable agriculture,75,Tropical dry forest,Primary forest,100,Mexico,17.31666667,-96.36666667
+Bautista Cruz et al 2005,Bautista Cruz et al 2005 h,Arable agriculture,75,Tropical dry forest,Primary forest,100,Mexico,17.31666667,-96.36666667
+Bautista Cruz et al 2005,Bautista Cruz et al 2005 l,Arable agriculture,75,Tropical dry forest,Primary forest,100,Mexico,17.31666667,-96.36666667
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007e,Pasture,80,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Knight 1975,Knight 1975e,Pasture,80,Tropical rainforest,Primary forest,-9999,Panama,9.152604,-79.850032
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011o,Pasture,80,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667
+Saldarriaga et al 1988,Saldarriaga et al 1988p,Shifting agriculture,80,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Saldarriaga et al 1988,Saldarriaga et al 1988q,Shifting agriculture,80,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Saldarriaga et al 1988,Saldarriaga et al 1988r,Shifting agriculture,80,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Saldarriaga et al 1988,Saldarriaga et al 1988s,Shifting agriculture,80,Tropical moist forest,Primary forest,-9999,Venezuela,1.933333333,-67.05
+Liebsch et al 2008,Liebsch et al 2008c,Shifting agriculture,80,Tropical rainforest,Primary forest,-9999,Brazil,-25.425912,-48.707886
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007n,Pasture,80,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Marín-Spiotta et al 2007,Marín-Spiotta et al 2007o,Pasture,80,Tropical rainforest,Primary forest,-9999,Puerto Rico,10.81472222,-85.615
+Cifuentes Jara 2008,Cifuentes Jara 2008k,Pasture,82,Tropical dry forest,Primary forest,-9999,Costa Rica,10.8375,-85.6147
+Woods et al 2012,Woods et al 2012g,Pasture,85,Tropical moist forest,Primary forest,-9999,Panama,9.15,-79.85
+Lorenz et al 2009,Lorenz et al 2009a,Pasture,90,Tropical dry forest,Primary forest,-9999,Costa Rica,10.81472222,-85.615
+Turner et al 1997,Turner et al 1997a,Arable agriculture,100,Tropical rainforest,Primary forest,-9999,Singapore,1.378136,103.801918
+Turner et al 1997,Turner et al 1997b,Arable agriculture,100,Tropical rainforest,Primary forest,-9999,Singapore,1.378136,103.801918
+DeWalt et al 2003,DeWalt et al 2003g,Arable agriculture,100,Tropical moist forest,Primary forest,-9999,Panama,9.150909,-79.849319
+DeWalt et al 2003,DeWalt et al 2003h,Arable agriculture,100,Tropical moist forest,Primary forest,-9999,Panama,9.150909,-79.849319
+Woods et al 2012,Woods et al 2012e,Pasture,115,Tropical moist forest,Primary forest,-9999,Panama,9.15,-79.85
+Woods et al 2012,Woods et al 2012f,Pasture,115,Tropical moist forest,Primary forest,-9999,Panama,9.15,-79.85
+Muñiz-Castro et al 2011,Muñiz-Castro et al 2011j,Pasture,174,Tropical montane forest,Primary forest,-9999,Mexico,19.48116667,-96.91666667

@@ -1,0 +1,13 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Planning\Dunn et al 2004a.jpg Monday 19-Nov-2012 10:14:06 AM
+1.002, 89.1859
+0.9979, 68.5023
+0.9939, 49.7654
+0.9938, 44.4118
+5.0048, 46.0596
+10.9567, 73.4128
+10.9973, 76.5756
+14.0228, 84.3176
+17.1238, 103.0184
+20.9715, 90.3269
+51.3436, 93.8115
+41.19, 127.434

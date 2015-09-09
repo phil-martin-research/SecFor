@@ -1,0 +1,84 @@
+Sqrt_age,Proportion,Type,Study
+10.0405,0.8328,Flying animals,1
+6.3648,0.8632,Flying animals,2
+5.5131,0.8401,Flying animals,3
+5.5105,0.7619,Flying animals,4
+5.0395,0.7617,Flying animals,5
+4.2022,0.7117,Flying animals,6
+3.9136,0.713,Flying animals,7
+3.6978,0.6218,Flying animals,8
+3.1653,0.6002,Flying animals,9
+2.9973,0.5789,Flying animals,10
+2.8463,0.6017,Flying animals,11
+2.2557,0.6599,Flying animals,12
+1.7412,0.721,Flying animals,13
+5.2755,0.5495,Flying animals,14
+3.8921,0.5308,Flying animals,15
+2.9493,0.502,Flying animals,16
+2.2355,0.5104,Flying animals,17
+2.2341,0.4705,Flying animals,18
+2.2147,0.3495,Flying animals,19
+0.9659,0.2594,Flying animals,20
+5.0391,0.7504,Non-flying animals,21
+3.6583,0.8013,Non-flying animals,22
+3.2024,0.7997,Non-flying animals,23
+2.96,0.821,Non-flying animals,24
+5.946,0.611,Non-flying animals,25
+5.0492,0.5979,Non-flying animals,26
+4.1573,0.7302,Non-flying animals,27
+3.6404,0.7215,Non-flying animals,28
+3.1997,0.7185,Non-flying animals,29
+3.4873,0.6886,Non-flying animals,30
+2.9569,0.7285,Non-flying animals,31
+2.8628,0.6401,Non-flying animals,32
+2.7869,0.6415,Non-flying animals,33
+2.257,0.6998,Non-flying animals,34
+3.6512,0.5918,Non-flying animals,35
+1.7506,0.5501,Non-flying animals,36
+2.2671,0.5503,Non-flying animals,37
+5.3014,0.4215,Non-flying animals,38
+4.2211,0.3713,Non-flying animals,39
+4.5083,0.3273,Non-flying animals,40
+3.9005,0.3271,Non-flying animals,41
+3.201,0.3084,Non-flying animals,42
+3.1851,0.2871,Non-flying animals,43
+2.2463,0.3822,Non-flying animals,44
+2.0025,0.3594,Non-flying animals,45
+2.0163,0.3181,Non-flying animals,46
+0.9811,0.258,Non-flying animals,47
+2.2387,0.1558,Non-flying animals,48
+1.9766,0.043,Trees,49
+4.4682,0.041,Trees,50
+3.287,0.1546,Trees,51
+3.8925,0.0921,Trees,52
+3.8793,0.1491,Trees,53
+3.8959,0.1904,Trees,54
+4.9149,0.2192,Trees,55
+4.6122,0.2589,Trees,56
+3.3359,0.2529,Trees,57
+4.0257,0.4325,Trees,58
+4.9985,0.4456,Trees,59
+5.4059,0.3531,Trees,60
+5.7681,0.2906,Trees,61
+5.002,0.0906,Trees,62
+6.023,0.191,Trees,63
+7.117,0.1912,Trees,64
+9.0111,0.4922,Trees,65
+3.16227766,0.1111,Trees,66
+3.16227766,0,Trees,66
+4.472135955,0.2222,Trees,66
+4.472135955,0.2222,Trees,66
+4.472135955,0,Trees,66
+5.477225575,0.2778,Trees,66
+5.477225575,0,Trees,66
+5.477225575,0,Trees,66
+7.745966692,0.3889,Trees,66
+7.745966692,0.3889,Trees,66
+7.745966692,0.3333,Trees,66
+8.94427191,0.6667,Trees,66
+8.94427191,0.2778,Trees,66
+8.94427191,0.4444,Trees,66
+0.091666667,35,Trees,35
+0.425,55,Trees,55
+0.333333333,85,Trees,85
+0.7,115,Trees,115

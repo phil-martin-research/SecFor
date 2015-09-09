@@ -1,0 +1,10 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications	 Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Woods et al 2012a.jpg Friday 1-Feb-2013 10:11:06 AM	Age	Richness		
+13.1151	2.8611	35	2.8611		
+13.1151	-0.2375	35	0		
+51.4889	12.0349	55	12.0349		
+51.7318	7.4718	55	7.4718		
+114.6357	19.7179	115	19.7179		
+114.6357	15.1545	115	15.1545		
+88.6484	8.9818	85	8.9818		
+173.1679	25.8176	M	25.8176		23.53595
+173.1679	21.2543	M	21.2543		

@@ -1,0 +1,9 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Cleary et al 2006a.jpg Wednesday 14-Nov-2012 5:08:17 PM
+7.184, 10.6314
+7.2532, 11.7194
+10.1304, 27.5501
+10.1072, 28.8428
+17.34, 7.297
+17.3485, 8.6575
+20.1954, 24.6245
+20.1918, 29.0463

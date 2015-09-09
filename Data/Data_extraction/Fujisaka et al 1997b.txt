@@ -1,0 +1,9 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Fujisaka et al 1997b.jpg Tuesday 20-Nov-2012 3:36:16 PM
+0.7339, 235.2923
+0.7055, 144.3875
+6.983, 80.0415
+6.9872, 44.3862
+8.0265, 116.5792
+8.0421, 64.6585
+9.0786, 80.7635
+9.1009, 44.48

@@ -1,0 +1,21 @@
+#DataThief C:\Documents and Settings\Phil\My Documents\Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Planning\Chazdon et al 2009.JPG Tuesday 10-Jul-2012 4:45:55 PM
+10.0405, 0.8328
+6.3648, 0.8632
+5.5131, 0.8401
+5.5105, 0.7619
+5.0395, 0.7617
+4.2022, 0.7117
+3.9136, 0.713
+3.6978, 0.6218
+3.1653, 0.6002
+2.9973, 0.5789
+2.8463, 0.6017
+2.2557, 0.6599
+1.7412, 0.721
+5.2755, 0.5495
+3.8921, 0.5308
+2.9493, 0.502
+2.2355, 0.5104
+2.2341, 0.4705
+2.2147, 0.3495
+0.9659, 0.2594

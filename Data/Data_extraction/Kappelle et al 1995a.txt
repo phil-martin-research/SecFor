@@ -1,0 +1,10 @@
+#DataThief C:\Users\Phil\Documents\My Dropbox\Publications, Reports and Responsibilities\Chapters\4. Forest restoration trajectories\Data extraction\Figures for data extraction\Kappelle et al 1995a.jpg Wednesday 16-Jan-2013 11:29:48 AM
+8.1764, 1.9898
+10.1435, 2.0955
+12.1963, 1.6957
+20.2628, 2.2006
+20.3558, 1.9889
+25.2032, 3.3993
+30.3282, 4.1161
+30.2049, 3.0933
+32.3631, 2.9872
